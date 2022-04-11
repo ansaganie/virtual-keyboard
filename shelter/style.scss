@@ -11,10 +11,6 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  &__main {
-    padding-top: 340px;
-  }
 }
 
 .site-header {
@@ -83,8 +79,10 @@
   }
 }
 
-.site-main {
+.main__start-page {
+  padding-top: 340px;
   height: 908px;
+
   background: {
     image: 
       url('./assets/images/start-screen-puppy.png'),
@@ -97,10 +95,10 @@
 
 .content {
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 42px;
-  max-width: 460px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 42px;
+    max-width: 460px;
 
   &__heading {
     margin: 0;
@@ -137,5 +135,42 @@
     &:hover {
       background-color: vars.$color-primary-light;
     }
+  }
+}
+
+.about__wrapper {
+  padding: 80px 40px 100px 50%;
+  min-height: 588px;
+
+  background: {
+    image: url('./assets/images/about-pets.png');
+    position: 25%;
+    repeat: no-repeat;
+  };
+}
+
+.cozy {
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+
+  &__heading {
+    margin: 0;
+    padding: 0;
+
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    color: vars.$color-dark-l;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 160%;
+    color: vars.$color-dark-xl;
   }
 }

@@ -1,6 +1,5 @@
 @use './fonts.scss';
 @use './normalize.scss';
-@use './buttons.scss';
 @use './variables.scss' as vars;
 
 * {
@@ -32,6 +31,46 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: vars.$color-dark-l;
+}
+
+.button--primary {
+  padding: 15px 45px;
+
+  background-color: vars.$color-primary;
+  border-radius: 100px;
+  border: none;
+
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  columns: vars.$color-dark-3xl;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-primary-light;
+  }
+}
+
+.controller {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid vars.$color-primary;
+  border-radius: 50%;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-primary;
+  }
 }
 
 .header {
@@ -149,5 +188,56 @@ body {
     font-size: 20px;
     line-height: 115%;
     color: vars.$color-primary;
+  }
+}
+
+.card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  background-color: vars.$color-light-s;
+  border-radius: 9px;
+
+  &__image {
+    width: 270px;
+    height: 270px;
+  }
+
+  &__name {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__button {
+    padding: 15px 45px;
+
+    background-color: vars.$color-light-s;
+    border: 2px solid vars.$color-primary;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    color: vars.$color-dark-3xl;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$color-primary-light;
+      border-color: vars.$color-primary-light;
+    }
   }
 }

@@ -400,6 +400,12 @@ body {
   color: #545454;
 }
 
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
 .heading--primary {
   margin: 0;
   padding: 0;
@@ -409,15 +415,11 @@ body {
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.06em;
   color: #545454;
 }
 
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.wrapper__header {
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -478,13 +480,21 @@ body {
   text-decoration: none;
 }
 
-.main__start-page {
-  padding-top: 340px;
+.main-start-page {
   height: 908px;
-  background-image: url("./assets/images/start-screen-puppy.png"), url("./assets/images/start-screen-background.png");
-  background-position: right bottom, left top;
-  background-size: 700px, cover;
-  background-repeat: no-repeat, no-repeat;
+  background-image: url("./assets/images/start-screen-background.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.start-page__wrapper {
+  padding-top: 340px;
+  height: 100%;
+  background-image: url("./assets/images/start-screen-puppy.png");
+  background-position: right bottom;
+  background-size: 700px;
+  background-repeat: no-repeat;
 }
 
 .content {
@@ -525,7 +535,7 @@ body {
 }
 
 .about__wrapper {
-  padding: 80px 40px 100px 50%;
+  padding: 80px 40px 100px 640px;
   min-height: 588px;
   background-image: url("./assets/images/about-pets.png");
   background-position: 25%;
@@ -673,11 +683,16 @@ body {
   line-height: 115%;
 }
 
+.main-donation {
+  background-color: #F6F6F6;
+}
+
 .donation__wrapper {
-  padding: 80px 40px 100px 50%;
+  padding: 80px 40px 100px 640px;
   min-height: 463px;
   background-image: url("./assets/images/donation-dog.png");
-  background-position: 25%;
+  background-position: 10%;
+  background-size: 500px;
   background-repeat: no-repeat;
 }
 .donation__content {
@@ -725,6 +740,49 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+}
+
+.site-footer {
+  background-image: url("./assets/images/start-screen-background.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer__wrapper {
+  display: flex;
+  gap: 160px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-image: url("./assets/images/footer-puppy.png");
+  background-position: right bottom;
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
+.footer__heading {
+  text-align: left;
+  color: #FFFFFF;
+}
+.footer__item {
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact__text {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #F1CDB3;
 }
 
 /*# sourceMappingURL=style.css.map */

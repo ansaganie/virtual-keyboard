@@ -14,6 +14,12 @@ body {
   color: vars.$color-dark-l;
 }
 
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
 .heading--primary {
   margin: 0;
   padding: 0;
@@ -24,5 +30,6 @@ body {
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.06em;
   color: vars.$color-dark-l;
 }

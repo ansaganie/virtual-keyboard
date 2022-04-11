@@ -1,15 +1,11 @@
 @use './assets/styles/common.scss';
 @use './assets/styles/variables.scss' as vars;
 
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-
-  &__header {
+.header {
+  &__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
   }
 }
 
@@ -79,18 +75,28 @@
   }
 }
 
-.main__start-page {
-  padding-top: 340px;
+.main-start-page {
   height: 908px;
 
   background: {
-    image: 
-      url('./assets/images/start-screen-puppy.png'),
-      url('./assets/images/start-screen-background.png');
-    position: right bottom, left top;
-    size: 700px, cover;
-    repeat: no-repeat, no-repeat;
+    image: url('./assets/images/start-screen-background.png');
+    position: left top;
+    size: cover;
+    repeat: no-repeat;
   };
+}
+
+.start-page {
+  &__wrapper {
+    padding-top: 340px;
+    height: 100%;
+    background: {
+      image: url('./assets/images/start-screen-puppy.png');
+      position: right bottom;
+      size: 700px;
+      repeat: no-repeat;
+    };
+  }
 }
 
 .content {
@@ -139,7 +145,7 @@
 }
 
 .about__wrapper {
-  padding: 80px 40px 100px 50%;
+  padding: 80px 40px 100px 640px;
   min-height: 588px;
 
   background: {
@@ -316,14 +322,19 @@
   }
 }
 
+.main-donation {
+  background-color: vars.$color-light-l;
+}
+
 .donation {
   &__wrapper {
-    padding: 80px 40px 100px 50%;
+    padding: 80px 40px 100px 640px;
     min-height: 463px;
   
     background: {
       image: url('./assets/images/donation-dog.png');
-      position: 25%;
+      position: 10%;
+      size: 500px;
       repeat: no-repeat;
     };
   }
@@ -380,5 +391,58 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
+  }
+}
+
+.site-footer {
+  background: {
+    image: url('./assets/images/start-screen-background.png');
+    position: left top;
+    size: cover;
+    repeat: no-repeat;
+  };
+}
+
+.footer {
+  &__wrapper {
+    display: flex;
+    gap: 160px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    background: {
+      image: url('./assets/images/footer-puppy.png');
+      position: right bottom;
+      size: 300px;
+      repeat: no-repeat;
+    }
+  }
+
+  &__heading {
+    text-align: left;
+    color: vars.$color-light-xl;
+  }
+
+  &__item {
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__text {
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    color: vars.$color-primary;
   }
 }

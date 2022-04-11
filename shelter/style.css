@@ -1,34 +1,34 @@
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-bold.ttf") format("ttf"), url("../fonts/georgia/georgia-bold.woff2") format("woff2"), url("../fonts/georgia/georgia-bold.woff") format("woff");
+  src: url("./assets/fonts/georgia/georgia-bold.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-bold.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-italic.ttf") format("ttf"), url("../fonts/georgia/georgia-italic.woff2") format("woff2"), url("../fonts/georgia/georgia-italic.woff") format("woff");
+  src: url("./assets/fonts/georgia/georgia-italic.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-italic.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-regular.ttf") format("ttf"), url("../fonts/georgia/georgia-regular.woff2") format("woff2"), url("../fonts/georgia/georgia-regular.woff") format("woff");
+  src: url("./assets/fonts/georgia/georgia-regular.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-regular.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../fonts/arial/arial-italic.ttf") format("ttf"), url("../fonts/arial/arial-italic.woff2") format("woff2"), url("../fonts/arial/arial-italic.woff") format("woff");
+  src: url("./assets/fonts/arial/arial-italic.ttf") format("ttf"), url("./assets/fonts/arial/arial-italic.woff2") format("woff2"), url("./assets/fonts/arial/arial-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../fonts/arial/arial-regular.ttf") format("ttf"), url("../fonts/arial/arial-regular.woff2") format("woff2"), url("../fonts/arial/arial-regular.woff") format("woff");
+  src: url("./assets/fonts/arial/arial-regular.ttf") format("ttf"), url("./assets/fonts/arial/arial-regular.woff2") format("woff2"), url("./assets/fonts/arial/arial-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -392,15 +392,26 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.wrapper__main {
+  padding-top: 340px;
+}
+
+.site-header {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 .logo__title {
-  margin: 0;
-  padding: 0;
   padding-bottom: 10px;
   font-family: "Georgia", serif;
   font-weight: normal;
@@ -410,8 +421,6 @@ body {
   color: #F1CDB3;
 }
 .logo__subtitle {
-  margin: 0;
-  padding: 0;
   font-size: 13px;
   line-height: 15px;
   color: #FFFFFF;
@@ -440,6 +449,51 @@ body {
   line-height: 160%;
   color: #CDCDCD;
   text-decoration: none;
+}
+
+.site-main {
+  height: 908px;
+  background-image: url("./assets/images/start-screen-puppy.png"), url("./assets/images/start-screen-background.png");
+  background-position: right bottom, left top;
+  background-size: 700px, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 42px;
+  max-width: 460px;
+}
+.content__heading {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: normal;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+.content__text {
+  line-height: 160%;
+  color: #CDCDCD;
+}
+.content__button {
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  columns: #292929;
+  cursor: pointer;
+}
+.content__button:hover {
+  background-color: #FDDCC4;
 }
 
 /*# sourceMappingURL=style.css.map */

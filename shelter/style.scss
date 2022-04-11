@@ -1,14 +1,6 @@
 @use './assets/styles/common.scss';
 @use './assets/styles/variables.scss' as vars;
 
-.header {
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-  }
-}
-
 .site-header {
   position: absolute;
   top: 60px;
@@ -16,63 +8,6 @@
   right: 0; 
   margin-left: auto; 
   margin-right: auto;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-decoration: none;
-
-  &__title {
-    padding-bottom: 10px;
-
-    font-family: 'Georgia', serif;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-    color: vars.$color-primary;
-  }
-
-  &__subtitle {
-    font-size: 13px;
-    line-height: 15px;
-    color: vars.$color-light-xl;
-    letter-spacing: 0.1em;
-  }
-}
-
-.menu {
-  &__wrapper {
-    display: flex;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-  }
-
-  &__item {
-    margin: 0;
-    padding: 0;
-
-    &--active {
-      border-bottom: 3px solid vars.$color-primary;
-    }
-
-    &:hover {
-      border-bottom: 3px solid vars.$color-primary;
-    }
-  }
-
-  &__link {
-    font-size: 15px;
-    line-height: 160%;
-    color: vars.$color-dark-s;
-    text-decoration: none;
-  }
 }
 
 .main-start-page {

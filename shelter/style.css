@@ -425,15 +425,6 @@ body {
   align-items: center;
 }
 
-.site-header {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .logo {
   display: flex;
   flex-direction: column;
@@ -478,6 +469,15 @@ body {
   line-height: 160%;
   color: #CDCDCD;
   text-decoration: none;
+}
+
+.site-header {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-start-page {

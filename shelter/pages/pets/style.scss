@@ -1,0 +1,10 @@
+@use '../../assets/styles/common.scss';
+@use '../../assets/styles/variables.scss' as vars;
+
+.header__wrapper {
+  padding-top: 60px;
+}
+
+.logo__title, .logo__subtitle, .menu__link {
+  color: vars.$color-dark-l;
+}

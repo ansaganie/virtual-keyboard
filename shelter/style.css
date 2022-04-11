@@ -372,6 +372,23 @@ template {
   display: none;
 }
 
+.button--primary {
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  columns: #292929;
+  cursor: pointer;
+}
+.button--primary:hover {
+  background-color: #FDDCC4;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -523,6 +540,102 @@ body {
   font-size: 15px;
   line-height: 160%;
   color: #4C4C4C;
+}
+
+.main-pets {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #F6F6F6;
+  max-height: 877px;
+}
+
+.pets__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.pets__heading {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  text-align: center;
+  color: #545454;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.slider__control {
+  position: absolute;
+  top: 45%;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.slider__control:hover {
+  background-color: #F1CDB3;
+}
+.slider__back {
+  left: 0;
+}
+.slider__next {
+  right: 0;
+}
+
+.card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: #FAFAFA;
+  border-radius: 9px;
+}
+.card__image {
+  width: 270px;
+  height: 270px;
+}
+.card__name {
+  padding: 0;
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #545454;
+}
+.card__button {
+  padding: 15px 45px;
+  background-color: #FAFAFA;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  color: #292929;
+  cursor: pointer;
+}
+.card__button:hover {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 /*# sourceMappingURL=style.css.map */

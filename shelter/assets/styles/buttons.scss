@@ -1,0 +1,23 @@
+@use './variables.scss' as vars;
+
+
+.button--primary {
+  padding: 15px 45px;
+
+  background-color: vars.$color-primary;
+  border-radius: 100px;
+  border: none;
+
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  columns: vars.$color-dark-3xl;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-primary-light;
+  }
+}

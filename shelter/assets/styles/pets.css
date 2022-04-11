@@ -519,7 +519,7 @@ body {
 }
 
 .site-footer {
-  background: url(/shelter/assets/images/noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("../images/noise_lines_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer__wrapper {
@@ -527,7 +527,7 @@ body {
   gap: 160px;
   padding-top: 56px;
   padding-bottom: 60px;
-  background-image: url("/shelter/assets/images/footer-puppy.png");
+  background-image: url("../images/footer-puppy.png");
   background-position: right 30px bottom 20px;
   background-size: 300px;
   background-repeat: no-repeat;

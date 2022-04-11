@@ -596,6 +596,7 @@ body {
   font-size: 17px;
   line-height: 130%;
   color: #292929;
+  cursor: pointer;
 }
 .card:hover > .card__button {
   background-color: #FDDCC4;

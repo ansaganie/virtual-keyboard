@@ -157,15 +157,7 @@
   gap: 25px;
 
   &__heading {
-    margin: 0;
-    padding: 0;
-
-    font-family: Georgia, serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    color: vars.$color-dark-l;
+    text-align: left;
   }
 
   &__text {
@@ -188,16 +180,6 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
-  }
-
-  &__heading {
-    font-family: 'Georgia', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    text-align: center;
-    color: vars.$color-dark-l;
   }
 }
 
@@ -286,5 +268,52 @@
       background-color: vars.$color-primary-light;
       border-color: vars.$color-primary-light;
     }
+  }
+}
+
+.main-help {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.help {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 0 130px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 120px;
+    row-gap: 55px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__name {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    color: vars.$color-dark-l;
   }
 }

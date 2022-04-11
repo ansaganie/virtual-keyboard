@@ -1,7 +1,7 @@
 @use './fonts.scss';
 @use './normalize.scss';
-@use './variables.scss';
 @use './buttons.scss';
+@use './variables.scss' as vars;
 
 * {
   box-sizing: border-box;
@@ -11,4 +11,17 @@ body {
   font-family: Arial, sans-serif;
   font-size: 15px;
   line-height: 16.5px;
+}
+
+.heading--primary {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  color: vars.$color-dark-l;
 }

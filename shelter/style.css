@@ -383,6 +383,19 @@ body {
   color: #545454;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -414,6 +427,7 @@ body {
   font-weight: normal;
   color: #292929;
   text-decoration: none;
+  letter-spacing: 0.06em;
   cursor: pointer;
 }
 .button--primary:hover {
@@ -424,16 +438,32 @@ body {
   width: 52px;
   height: 52px;
   padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid #F1CDB3;
   border-radius: 50%;
   background-color: transparent;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #292929;
   cursor: pointer;
 }
 .controller:hover {
   background-color: #F1CDB3;
+}
+.controller:disabled {
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+}
+.controller:disabled:hover {
+  background-color: transparent;
+  cursor: auto;
 }
 
 .header__wrapper {
@@ -495,10 +525,10 @@ body {
 .footer__wrapper {
   display: flex;
   gap: 160px;
-  padding-top: 50px;
+  padding-top: 56px;
   padding-bottom: 60px;
   background-image: url("/shelter/assets/images/footer-puppy.png");
-  background-position: right bottom;
+  background-position: right 30px bottom 20px;
   background-size: 300px;
   background-repeat: no-repeat;
 }
@@ -507,7 +537,7 @@ body {
   color: #FFFFFF;
 }
 .footer__item {
-  max-width: 280px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -516,7 +546,7 @@ body {
 
 .contact {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   text-decoration: none;
 }
@@ -526,6 +556,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 0.06em;
   color: #F1CDB3;
 }
 
@@ -589,7 +620,7 @@ body {
   padding-top: 340px;
   height: 100%;
   background-image: url("./assets/images/start-screen-puppy.png");
-  background-position: right bottom;
+  background-position: right 25px bottom;
   background-size: 700px;
   background-repeat: no-repeat;
 }
@@ -611,6 +642,8 @@ body {
   color: #FFFFFF;
 }
 .content__text {
+  margin: 0;
+  padding: 0;
   line-height: 160%;
   color: #CDCDCD;
 }
@@ -632,10 +665,10 @@ body {
 }
 
 .about__wrapper {
-  padding: 80px 40px 100px 640px;
+  padding: 94px 40px 100px 640px;
   min-height: 588px;
   background-image: url("./assets/images/about-pets.png");
-  background-position: 25%;
+  background-position: 22%;
   background-repeat: no-repeat;
 }
 
@@ -650,6 +683,8 @@ body {
   text-align: left;
 }
 .cozy__text {
+  padding: 0;
+  margin: 0;
   font-size: 15px;
   line-height: 160%;
   color: #4C4C4C;
@@ -723,6 +758,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 0.05em;
 }
 
 .main-donation {
@@ -730,10 +766,10 @@ body {
 }
 
 .donation__wrapper {
-  padding: 80px 40px 100px 640px;
-  min-height: 463px;
+  padding: 80px 40px 100px 720px;
+  min-height: 380px;
   background-image: url("./assets/images/donation-dog.png");
-  background-position: 10%;
+  background-position: 25% 50%;
   background-size: 500px;
   background-repeat: no-repeat;
 }
@@ -755,8 +791,11 @@ body {
   font-weight: 400;
   font-size: 15px;
   line-height: 110%;
+  letter-spacing: 0.06em;
 }
 .donation__legal {
+  padding: 0;
+  margin: 0;
   font-style: italic;
   font-size: 12px;
   line-height: 18px;
@@ -783,6 +822,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 0.06em;
   color: #545454;
 }
 

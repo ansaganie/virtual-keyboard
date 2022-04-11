@@ -60,6 +60,7 @@ body {
   font-weight: normal;
   color: vars.$color-dark-3xl;
   text-decoration: none;
+  letter-spacing: 0.06em;
 
   cursor: pointer;
 
@@ -181,12 +182,12 @@ body {
   &__wrapper {
     display: flex;
     gap: 160px;
-    padding-top: 50px;
+    padding-top: 56px;
     padding-bottom: 60px;
 
     background: {
       image: url('/shelter/assets/images/footer-puppy.png');
-      position: right bottom;
+      position: right 30px bottom 20px;
       size: 300px;
       repeat: no-repeat;
     }
@@ -198,7 +199,7 @@ body {
   }
 
   &__item {
-    max-width: 280px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -208,7 +209,7 @@ body {
 
 .contact {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 
   text-decoration: none;
@@ -219,6 +220,7 @@ body {
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
+    letter-spacing: 0.06em;
     color: vars.$color-primary;
   }
 }

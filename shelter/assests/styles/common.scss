@@ -1,2 +1,13 @@
 @use './fonts.scss';
 @use './normalize.scss';
+@use './variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 16.5px;
+}

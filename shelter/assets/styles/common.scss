@@ -45,7 +45,8 @@ body {
   line-height: 130%;
   font-style: normal;
   font-weight: normal;
-  columns: vars.$color-dark-3xl;
+  color: vars.$color-dark-3xl;
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -139,12 +140,9 @@ body {
 }
 
 .site-footer {
-  background: {
-    image: url('/shelter/assets/images/start-screen-background.png');
-    position: left top;
-    size: cover;
-    repeat: no-repeat;
-  };
+  background:
+    url(/shelter/assets/images/noise_lines_transparent@2X.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer {
@@ -181,6 +179,8 @@ body {
   align-items: center;
   gap: 20px;
 
+  text-decoration: none;
+
   &__text {
     font-family: 'Georgia', serif;
     font-style: normal;
@@ -201,6 +201,8 @@ body {
 
   background-color: vars.$color-light-s;
   border-radius: 9px;
+
+  cursor: pointer;
 
   &__image {
     width: 270px;
@@ -232,12 +234,10 @@ body {
     font-size: 17px;
     line-height: 130%;
     color: vars.$color-dark-3xl;
+  }
 
-    cursor: pointer;
-
-    &:hover {
-      background-color: vars.$color-primary-light;
-      border-color: vars.$color-primary-light;
-    }
+  &:hover > &__button {
+    background-color: vars.$color-primary-light;
+    border-color: vars.$color-primary-light;
   }
 }

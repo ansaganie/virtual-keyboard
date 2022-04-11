@@ -412,7 +412,8 @@ body {
   line-height: 130%;
   font-style: normal;
   font-weight: normal;
-  columns: #292929;
+  color: #292929;
+  text-decoration: none;
   cursor: pointer;
 }
 .button--primary:hover {
@@ -488,10 +489,7 @@ body {
 }
 
 .site-footer {
-  background-image: url("/shelter/assets/images/start-screen-background.png");
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url(/shelter/assets/images/noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer__wrapper {

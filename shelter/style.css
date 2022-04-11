@@ -412,7 +412,8 @@ body {
   line-height: 130%;
   font-style: normal;
   font-weight: normal;
-  columns: #292929;
+  color: #292929;
+  text-decoration: none;
   cursor: pointer;
 }
 .button--primary:hover {
@@ -488,10 +489,7 @@ body {
 }
 
 .site-footer {
-  background-image: url("/shelter/assets/images/start-screen-background.png");
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url(/shelter/assets/images/noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer__wrapper {
@@ -520,6 +518,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  text-decoration: none;
 }
 .contact__text {
   font-family: "Georgia", serif;
@@ -539,6 +538,7 @@ body {
   gap: 30px;
   background-color: #FAFAFA;
   border-radius: 9px;
+  cursor: pointer;
 }
 .card__image {
   width: 270px;
@@ -565,9 +565,8 @@ body {
   font-size: 17px;
   line-height: 130%;
   color: #292929;
-  cursor: pointer;
 }
-.card__button:hover {
+.card:hover > .card__button {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
 }
@@ -583,10 +582,7 @@ body {
 
 .main-start-page {
   height: 908px;
-  background-image: url("./assets/images/start-screen-background.png");
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url(/shelter/assets/images/noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .start-page__wrapper {
@@ -774,6 +770,7 @@ body {
   align-items: center;
   background: #F1CDB3;
   border-radius: 9px;
+  text-decoration: none;
 }
 .bank-card__icon {
   padding-right: 15px;
@@ -786,6 +783,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
+  color: #545454;
 }
 
 /*# sourceMappingURL=style.css.map */

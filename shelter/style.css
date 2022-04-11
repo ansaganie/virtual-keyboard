@@ -1,34 +1,34 @@
 @font-face {
   font-family: Georgia;
-  src: url("./assets/fonts/georgia/georgia-bold.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-bold.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-bold.woff") format("woff");
+  src: url("/shelter/assets/fonts/georgia/georgia-bold.ttf") format("ttf"), url("/shelter/assets/fonts/georgia/georgia-bold.woff2") format("woff2"), url("/shelter/assets/fonts/georgia/georgia-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("./assets/fonts/georgia/georgia-italic.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-italic.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-italic.woff") format("woff");
+  src: url("/shelter/assets/fonts/georgia/georgia-italic.ttf") format("ttf"), url("/shelter/assets/fonts/georgia/georgia-italic.woff2") format("woff2"), url("/shelter/assets/fonts/georgia/georgia-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("./assets/fonts/georgia/georgia-regular.ttf") format("ttf"), url("./assets/fonts/georgia/georgia-regular.woff2") format("woff2"), url("./assets/fonts/georgia/georgia-regular.woff") format("woff");
+  src: url("/shelter/assets/fonts/georgia/georgia-regular.ttf") format("ttf"), url("/shelter/assets/fonts/georgia/georgia-regular.woff2") format("woff2"), url("/shelter/assets/fonts/georgia/georgia-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("./assets/fonts/arial/arial-italic.ttf") format("ttf"), url("./assets/fonts/arial/arial-italic.woff2") format("woff2"), url("./assets/fonts/arial/arial-italic.woff") format("woff");
+  src: url("/shelter/assets/fonts/arial/arial-italic.ttf") format("ttf"), url("/shelter/assets/fonts/arial/arial-italic.woff2") format("woff2"), url("/shelter/assets/fonts/arial/arial-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("./assets/fonts/arial/arial-regular.ttf") format("ttf"), url("./assets/fonts/arial/arial-regular.woff2") format("woff2"), url("./assets/fonts/arial/arial-regular.woff") format("woff");
+  src: url("/shelter/assets/fonts/arial/arial-regular.ttf") format("ttf"), url("/shelter/assets/fonts/arial/arial-regular.woff2") format("woff2"), url("/shelter/assets/fonts/arial/arial-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -471,6 +471,49 @@ body {
   text-decoration: none;
 }
 
+.site-footer {
+  background-image: url("./assets/images/start-screen-background.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer__wrapper {
+  display: flex;
+  gap: 160px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-image: url("./assets/images/footer-puppy.png");
+  background-position: right bottom;
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
+.footer__heading {
+  text-align: left;
+  color: #FFFFFF;
+}
+.footer__item {
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact__text {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #F1CDB3;
+}
+
 .site-header {
   position: absolute;
   top: 60px;
@@ -740,49 +783,6 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
-}
-
-.site-footer {
-  background-image: url("./assets/images/start-screen-background.png");
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.footer__wrapper {
-  display: flex;
-  gap: 160px;
-  padding-top: 50px;
-  padding-bottom: 60px;
-  background-image: url("./assets/images/footer-puppy.png");
-  background-position: right bottom;
-  background-size: 300px;
-  background-repeat: no-repeat;
-}
-.footer__heading {
-  text-align: left;
-  color: #FFFFFF;
-}
-.footer__item {
-  max-width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.contact__text {
-  font-family: "Georgia", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  color: #F1CDB3;
 }
 
 /*# sourceMappingURL=style.css.map */

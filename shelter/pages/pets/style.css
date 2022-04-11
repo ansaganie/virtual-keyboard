@@ -471,6 +471,49 @@ body {
   text-decoration: none;
 }
 
+.site-footer {
+  background-image: url("/shelter/assets/images/start-screen-background.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer__wrapper {
+  display: flex;
+  gap: 160px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-image: url("/shelter/assets/images/footer-puppy.png");
+  background-position: right bottom;
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
+.footer__heading {
+  text-align: left;
+  color: #FFFFFF;
+}
+.footer__item {
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact__text {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #F1CDB3;
+}
+
 .header__wrapper {
   padding-top: 60px;
 }

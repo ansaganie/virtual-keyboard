@@ -397,6 +397,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 15px;
   line-height: 16.5px;
+  color: #545454;
 }
 
 .heading--primary {
@@ -613,7 +614,6 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  color: #545454;
 }
 .card__button {
   padding: 15px 45px;
@@ -671,7 +671,60 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
-  color: #545454;
+}
+
+.donation__wrapper {
+  padding: 80px 40px 100px 50%;
+  min-height: 463px;
+  background-image: url("./assets/images/donation-dog.png");
+  background-position: 25%;
+  background-repeat: no-repeat;
+}
+.donation__content {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.donation__heading {
+  text-align: left;
+}
+.donation__title {
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+}
+.donation__legal {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+}
+
+.bank-card {
+  padding: 10px 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #F1CDB3;
+  border-radius: 9px;
+}
+.bank-card__icon {
+  padding-right: 15px;
+  width: 30px;
+  height: 23px;
+}
+.bank-card__number {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
 }
 
 /*# sourceMappingURL=style.css.map */

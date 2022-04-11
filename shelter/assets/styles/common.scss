@@ -13,6 +13,19 @@ body {
   color: vars.$color-dark-l;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -59,6 +72,7 @@ body {
   width: 52px;
   height: 52px;
   padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,10 +81,28 @@ body {
   border-radius: 50%;
   background-color: transparent;
 
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: vars.$color-dark-3xl;
+
   cursor: pointer;
 
   &:hover {
     background-color: vars.$color-primary;
+  }
+
+  &:disabled {
+    border: 2px solid vars.$color-dark-s;
+    color: vars.$color-dark-s;
+  }
+
+  &:disabled:hover {
+    background-color: transparent;
+    cursor: auto;
   }
 }
 

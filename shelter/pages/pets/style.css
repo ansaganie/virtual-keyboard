@@ -383,6 +383,19 @@ body {
   color: #545454;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -424,16 +437,32 @@ body {
   width: 52px;
   height: 52px;
   padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid #F1CDB3;
   border-radius: 50%;
   background-color: transparent;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #292929;
   cursor: pointer;
 }
 .controller:hover {
   background-color: #F1CDB3;
+}
+.controller:disabled {
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+}
+.controller:disabled:hover {
+  background-color: transparent;
+  cursor: auto;
 }
 
 .header__wrapper {
@@ -518,6 +547,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  text-decoration: none;
 }
 .contact__text {
   font-family: "Georgia", serif;
@@ -537,6 +567,7 @@ body {
   gap: 30px;
   background-color: #FAFAFA;
   border-radius: 9px;
+  cursor: pointer;
 }
 .card__image {
   width: 270px;
@@ -563,19 +594,50 @@ body {
   font-size: 17px;
   line-height: 130%;
   color: #292929;
-  cursor: pointer;
 }
-.card__button:hover {
+.card:hover > .card__button {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
 }
 
+.site-header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
 .header__wrapper {
-  padding-top: 60px;
+  padding: 30px 40px;
 }
 
 .logo__title, .logo__subtitle, .menu__link {
   color: #545454;
+}
+
+.pets-content {
+  background-color: #F6F6F6;
+}
+.pets-content__wrapper {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+.pets__catalog {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+.pets__controls {
+  display: flex;
+  gap: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

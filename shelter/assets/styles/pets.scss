@@ -17,6 +17,14 @@
   color: vars.$color-dark-l;
 }
 
+.menu__item--active > .menu__link {
+  color: vars.$color-dark-3xl;
+}
+
+.menu__item:hover > .menu__link {
+  color: vars.$color-dark-3xl;
+}
+
 .pets-content {
   background-color: vars.$color-light-l;
   &__wrapper {

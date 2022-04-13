@@ -465,6 +465,10 @@ body {
   background-color: transparent;
   cursor: auto;
 }
+.controller--active {
+  background-color: #F1CDB3;
+  cursor: auto;
+}
 
 .header__wrapper {
   display: flex;
@@ -508,8 +512,11 @@ body {
 .menu__item--active {
   border-bottom: 3px solid #F1CDB3;
 }
-.menu__item:hover {
-  border-bottom: 3px solid #F1CDB3;
+.menu__item--active > .menu__link {
+  color: #FAFAFA;
+}
+.menu__item:hover > .menu__link {
+  color: #FAFAFA;
 }
 .menu__link {
   font-size: 15px;
@@ -602,6 +609,9 @@ body {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
 }
+.card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
 
 .site-header {
   position: sticky;
@@ -616,6 +626,14 @@ body {
 
 .logo__title, .logo__subtitle, .menu__link {
   color: #545454;
+}
+
+.menu__item--active > .menu__link {
+  color: #292929;
+}
+
+.menu__item:hover > .menu__link {
+  color: #292929;
 }
 
 .pets-content {

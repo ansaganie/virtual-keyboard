@@ -1,34 +1,34 @@
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-bold.ttf") format("ttf"), url("../fonts/georgia/georgia-bold.woff2") format("woff2"), url("../fonts/georgia/georgia-bold.woff") format("woff");
+  src: url("../../fonts/georgia/georgia-bold.ttf") format("ttf"), url("../../fonts/georgia/georgia-bold.woff2") format("woff2"), url("../../fonts/georgia/georgia-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-italic.ttf") format("ttf"), url("../fonts/georgia/georgia-italic.woff2") format("woff2"), url("../fonts/georgia/georgia-italic.woff") format("woff");
+  src: url("../../fonts/georgia/georgia-italic.ttf") format("ttf"), url("../../fonts/georgia/georgia-italic.woff2") format("woff2"), url("../../fonts/georgia/georgia-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: Georgia;
-  src: url("../fonts/georgia/georgia-regular.ttf") format("ttf"), url("../fonts/georgia/georgia-regular.woff2") format("woff2"), url("../fonts/georgia/georgia-regular.woff") format("woff");
+  src: url("../../fonts/georgia/georgia-regular.ttf") format("ttf"), url("../../fonts/georgia/georgia-regular.woff2") format("woff2"), url("../../fonts/georgia/georgia-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../fonts/arial/arial-italic.ttf") format("ttf"), url("../fonts/arial/arial-italic.woff2") format("woff2"), url("../fonts/arial/arial-italic.woff") format("woff");
+  src: url("../../fonts/arial/arial-italic.ttf") format("ttf"), url("../../fonts/arial/arial-italic.woff2") format("woff2"), url("../../fonts/arial/arial-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../fonts/arial/arial-regular.ttf") format("ttf"), url("../fonts/arial/arial-regular.woff2") format("woff2"), url("../fonts/arial/arial-regular.woff") format("woff");
+  src: url("../../fonts/arial/arial-regular.ttf") format("ttf"), url("../../fonts/arial/arial-regular.woff2") format("woff2"), url("../../fonts/arial/arial-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -526,7 +526,7 @@ body {
 }
 
 .site-footer {
-  background: url("../images/noise_lines_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("../../images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer__wrapper {
@@ -534,8 +534,8 @@ body {
   gap: 160px;
   padding-top: 56px;
   padding-bottom: 60px;
-  background-image: url("../images/footer-puppy.png");
-  background-position: right 30px bottom 20px;
+  background-image: url("../../images/common/footer-puppy.png");
+  background-position: right 30px bottom;
   background-size: 300px;
   background-repeat: no-repeat;
 }
@@ -605,12 +605,13 @@ body {
   color: #292929;
   cursor: pointer;
 }
+.card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  background-color: #FFFFFF;
+}
 .card:hover > .card__button {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
-}
-.card:hover {
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .site-header {
@@ -624,13 +625,13 @@ body {
 
 .main-start-page {
   height: 908px;
-  background: url("../images/noise_lines_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("../../images/main/noise_lines_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .start-page__wrapper {
   padding-top: 340px;
   height: 100%;
-  background-image: url("../images/start-screen-puppy.png");
+  background-image: url("../../images/main/start-screen-puppy.png");
   background-position: right 25px bottom;
   background-size: 700px;
   background-repeat: no-repeat;
@@ -678,7 +679,7 @@ body {
 .about__wrapper {
   padding: 94px 40px 100px 640px;
   min-height: 588px;
-  background-image: url("../images/about-pets.png");
+  background-image: url("../../images/main/about-pets.png");
   background-position: 22%;
   background-repeat: no-repeat;
 }
@@ -779,7 +780,7 @@ body {
 .donation__wrapper {
   padding: 80px 40px 100px 720px;
   min-height: 380px;
-  background-image: url("../images/donation-dog.png");
+  background-image: url("../../images/main/donation-dog.png");
   background-position: 25% 50%;
   background-size: 500px;
   background-repeat: no-repeat;
@@ -835,6 +836,9 @@ body {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
+}
+.bank-card:hover {
+  background-color: #FDDCC4;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
-@use './common.scss';
-@use './variables.scss' as vars;
+@use '../common/common.scss';
+@use '../common/variables.scss' as vars;
 
 .site-header {
   position: absolute;
@@ -14,7 +14,7 @@
   height: 908px;
 
   background:
-    url('../images/noise_lines_transparent@2X.png'),
+    url('../../images/main/noise_lines_transparent@2X.png'),
     radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
@@ -23,7 +23,7 @@
     padding-top: 340px;
     height: 100%;
     background: {
-      image: url('../images/start-screen-puppy.png');
+      image: url('../../images/main/start-screen-puppy.png');
       position: right 25px bottom;
       size: 700px;
       repeat: no-repeat;
@@ -84,7 +84,7 @@
   min-height: 588px;
 
   background: {
-    image: url('../images/about-pets.png');
+    image: url('../../images/main/about-pets.png');
     position: 22%;
     repeat: no-repeat;
   };
@@ -204,7 +204,7 @@
     min-height: 380px;
   
     background: {
-      image: url('../images/donation-dog.png');
+      image: url('../../images/main/donation-dog.png');
       position: 25% 50%;
       size: 500px;
       repeat: no-repeat;
@@ -271,5 +271,9 @@
     line-height: 115%;
     letter-spacing: 0.06em;
     color: vars.$color-dark-l;
+  }
+
+  &:hover {
+    background-color: vars.$color-primary-light;
   }
 }

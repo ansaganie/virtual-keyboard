@@ -1,0 +1,85 @@
+@use '../../common/_variables.scss' as vars;
+
+.main-donation {
+  background-color: vars.$color-light-l;
+}
+
+.donation {
+  &__wrapper {
+    padding: 80px 40px 100px 720px;
+    min-height: 380px;
+  
+    background: {
+      image: url('../../images/main/donation-dog.png');
+      position: 25% 50%;
+      size: 500px;
+      repeat: no-repeat;
+    };
+  }
+
+  &__content {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__heading {
+    text-align: left;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+
+  &__legal {
+    padding: 0;
+    margin: 0;
+
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: vars.$color-dark-m;
+  }
+}
+
+.bank-card {
+  padding: 10px 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  background: vars.$color-primary;
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  &__icon {
+    padding-right: 15px;
+    width: 30px;
+    height: 23px;
+  }
+
+  &__number {
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: vars.$color-dark-l;
+  }
+
+  &:hover {
+    background-color: vars.$color-primary-light;
+  }
+}

@@ -1,5 +1,5 @@
-@use '../common/common.scss';
-@use '../common/variables.scss' as vars;
+@use '../common/common.css';
+@use '../common/_variables.scss' as vars;
 
 .site-header {
   position: sticky;

@@ -372,6 +372,161 @@ template {
   display: none;
 }
 
+.footer__wrapper {
+  display: flex;
+  gap: 160px;
+  padding-top: 56px;
+  padding-bottom: 60px;
+  background-image: url("../../images/common/footer-puppy.png");
+  background-position: right 30px bottom;
+  background-size: 300px;
+  background-repeat: no-repeat;
+}
+
+.footer__heading {
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.footer__item {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.contact__text {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo__title {
+  padding-bottom: 10px;
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
+.logo__subtitle {
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+}
+
+.menu__wrapper {
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item--active {
+  border-bottom: 3px solid #F1CDB3;
+}
+
+.menu__item--active > .menu__link {
+  color: #FAFAFA;
+}
+
+.menu__item:hover > .menu__link {
+  color: #FAFAFA;
+}
+
+.menu__link {
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  text-decoration: none;
+}
+
+.card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: #FAFAFA;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.card__image {
+  width: 270px;
+  height: 270px;
+}
+
+.card__name {
+  padding: 0;
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.card__button {
+  padding: 15px 45px;
+  background-color: #FAFAFA;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  color: #292929;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  background-color: #FFFFFF;
+}
+
+.card:hover > .card__button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -430,6 +585,7 @@ body {
   letter-spacing: 0.06em;
   cursor: pointer;
 }
+
 .button--primary:hover {
   background-color: #FDDCC4;
 }
@@ -454,166 +610,31 @@ body {
   color: #292929;
   cursor: pointer;
 }
+
 .controller:hover {
   background-color: #F1CDB3;
 }
+
 .controller:disabled {
   border: 2px solid #CDCDCD;
   color: #CDCDCD;
 }
+
 .controller:disabled:hover {
   background-color: transparent;
   cursor: auto;
 }
+
 .controller--active {
   background-color: #F1CDB3;
   cursor: auto;
-}
-
-.header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-.logo__title {
-  padding-bottom: 10px;
-  font-family: "Georgia", serif;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3;
-}
-.logo__subtitle {
-  font-size: 13px;
-  line-height: 15px;
-  color: #FFFFFF;
-  letter-spacing: 0.1em;
-}
-
-.menu__wrapper {
-  display: flex;
-  gap: 35px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.menu__item {
-  margin: 0;
-  padding: 0;
-}
-.menu__item--active {
-  border-bottom: 3px solid #F1CDB3;
-}
-.menu__item--active > .menu__link {
-  color: #FAFAFA;
-}
-.menu__item:hover > .menu__link {
-  color: #FAFAFA;
-}
-.menu__link {
-  font-size: 15px;
-  line-height: 160%;
-  color: #CDCDCD;
-  text-decoration: none;
 }
 
 .site-footer {
   background: url("../../images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
-.footer__wrapper {
-  display: flex;
-  gap: 160px;
-  padding-top: 56px;
-  padding-bottom: 60px;
-  background-image: url("../../images/common/footer-puppy.png");
-  background-position: right 30px bottom;
-  background-size: 300px;
-  background-repeat: no-repeat;
-}
-.footer__heading {
-  text-align: left;
-  color: #FFFFFF;
-}
-.footer__item {
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.contact {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  text-decoration: none;
-}
-.contact__text {
-  font-family: "Georgia", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3;
-}
-
-.card {
-  width: 270px;
-  height: 435px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  background-color: #FAFAFA;
-  border-radius: 9px;
-  cursor: pointer;
-}
-.card__image {
-  width: 270px;
-  height: 270px;
-}
-.card__name {
-  padding: 0;
-  margin: 0;
-  font-family: "Georgia", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-}
-.card__button {
-  padding: 15px 45px;
-  background-color: #FAFAFA;
-  border: 2px solid #F1CDB3;
-  box-sizing: border-box;
-  border-radius: 100px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 130%;
-  color: #292929;
-  cursor: pointer;
-}
-.card:hover {
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  background-color: #FFFFFF;
-}
-.card:hover > .card__button {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
-}
-
+/*# sourceMappingURL=common.css.map */
 .site-header {
   position: sticky;
   left: 0;

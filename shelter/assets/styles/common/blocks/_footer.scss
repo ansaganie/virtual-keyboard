@@ -1,0 +1,48 @@
+@use '../_variables.scss' as vars;
+
+.footer {
+  &__wrapper {
+    display: flex;
+    gap: 160px;
+    padding-top: 56px;
+    padding-bottom: 60px;
+
+    background: {
+      image: url('../../images/common/footer-puppy.png');
+      position: right 30px bottom;
+      size: 300px;
+      repeat: no-repeat;
+    }
+  }
+
+  &__heading {
+    text-align: left;
+    color: vars.$color-light-xl;
+  }
+
+  &__item {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  text-decoration: none;
+
+  &__text {
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: vars.$color-primary;
+  }
+}

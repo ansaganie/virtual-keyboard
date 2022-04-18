@@ -1,0 +1,33 @@
+@use '../../common/_variables.scss' as vars;
+
+.about__wrapper {
+  padding: 94px 40px 100px 640px;
+  min-height: 588px;
+
+  background: {
+    image: url('../../images/main/about-pets.png');
+    position: 22%;
+    repeat: no-repeat;
+  };
+}
+
+.cozy {
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+
+  &__heading {
+    text-align: left;
+  }
+
+  &__text {
+    padding: 0;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 160%;
+    color: vars.$color-dark-xl;
+  }
+}

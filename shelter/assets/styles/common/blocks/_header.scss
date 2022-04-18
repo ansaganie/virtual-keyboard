@@ -6,6 +6,16 @@
     justify-content: space-between;
     align-items: center; 
   }
+
+  &__menu-button {
+    display: none;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+  }
 }
 
 .logo {
@@ -66,5 +76,29 @@
     line-height: 160%;
     color: vars.$color-light-l-2;
     text-decoration: none;
+  }
+}
+
+@media screen and (max-width:1279px) and (min-width:768px) {
+
+}
+
+@media screen and (max-width:767px) {
+  .header {
+    &__wrapper {
+      justify-content: start;
+    }
+
+    &__logo {
+      margin-right: 44px;
+    }
+
+    &__menu-button {
+      display: block;
+    }
+
+    &__menu {
+      display: none;
+    }
   }
 }

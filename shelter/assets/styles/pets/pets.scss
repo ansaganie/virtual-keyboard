@@ -1,4 +1,4 @@
-@use '../common/common.css';
+@use '../common/common.scss';
 @use '../common/_variables.scss' as vars;
 
 .site-header {
@@ -9,8 +9,10 @@
   background-color: #fff;
 }
 
-.header__wrapper {
-  padding: 30px 40px;
+.header {
+  &__wrapper {
+    padding: 30px 40px;
+  }
 }
 
 .logo__title, .logo__subtitle, .menu__link {

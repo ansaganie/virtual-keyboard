@@ -415,6 +415,15 @@ template {
   justify-content: space-between;
   align-items: center;
 }
+.header__menu-button {
+  display: none;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+}
 
 .logo {
   display: flex;
@@ -465,6 +474,20 @@ template {
   text-decoration: none;
 }
 
+@media screen and (max-width: 767px) {
+  .header__wrapper {
+    justify-content: start;
+  }
+  .header__logo {
+    margin-right: 44px;
+  }
+  .header__menu-button {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+  }
+}
 .card {
   width: 270px;
   height: 435px;
@@ -542,6 +565,16 @@ body {
   padding: 0 40px;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .wrapper {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
 .heading--primary {
   margin: 0;
   padding: 0;
@@ -735,6 +768,7 @@ body {
     letter-spacing: 0.06em;
   }
   .content__text {
+    text-align: center;
     font-size: 15px;
     line-height: 160%;
   }

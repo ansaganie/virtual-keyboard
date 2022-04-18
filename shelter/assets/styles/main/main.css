@@ -638,10 +638,14 @@ template {
     transform: rotate(90deg);
   }
   .header__menu-button:focus + .menu {
+    position: absolute;
+    top: 0;
     right: 0px;
   }
   .header__menu {
+    position: absolute;
     transition: right 0.5s;
+    top: 0px;
     right: -100%;
   }
 
@@ -735,6 +739,10 @@ template {
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

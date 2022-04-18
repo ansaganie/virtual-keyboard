@@ -27,6 +27,26 @@
   color: vars.$color-dark-3xl;
 }
 
+
+
+@media screen and (max-width:767px) {
+  .menu__logo > .logo__title {
+    color: vars.$color-primary;
+  }
+
+  .menu__logo > .logo__subtitle {
+    color: vars.$color-light-xl;
+  }
+
+  .menu__item > .menu__link {
+    color: vars.$color-dark-s;
+  }
+  
+  .menu__item--active > .menu__link {
+    color: vars.$color-light-s;
+  }
+}
+
 .pets-content {
   background-color: vars.$color-light-l;
 

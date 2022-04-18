@@ -45,6 +45,28 @@
 }
 
 .menu {
+  &__header {
+    display: none;
+  }
+
+  &__logo {
+    margin-right: 44px;
+  }
+
+  &__close-btn {
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s;
+
+    &:focus {
+      transform: rotate(-90deg);
+    }
+  }
+
   &__wrapper {
     display: flex;
     gap: 35px;
@@ -79,12 +101,9 @@
   }
 }
 
-@media screen and (max-width:1279px) and (min-width:768px) {
-
-}
-
 @media screen and (max-width:767px) {
   .header {
+
     &__wrapper {
       justify-content: start;
     }
@@ -95,10 +114,74 @@
 
     &__menu-button {
       display: block;
+      transition: transform 0.5s;
+
+      &:focus {
+        transform: rotate(90deg);
+      }
+
+      &:focus + .menu {
+        position: absolute;
+        top: 0;
+        right: 0px;
+      }
     }
 
     &__menu {
-      display: none;
+      position: absolute;
+      transition: right 0.5s;
+      top: 0px;
+      right: -100%;
+    }
+  }
+
+  .menu {
+    width: 320px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+
+    background-color: vars.$color-dark-3xl;
+
+    &__logo {
+      display: flex;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 30px 10px;
+      padding-bottom: 160px;
+    }
+
+    &__wrapper {
+      padding: 0 38px;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__item {
+      margin: 0;
+      padding: 0;
+  
+      &--active {
+        border-bottom: 3px solid vars.$color-primary;
+      }
+  
+      &--active > .menu__link {
+        color: vars.$color-light-s;
+      }
+  
+      &:hover > .menu__link {
+        color: vars.$color-light-s;
+      }
+    }
+  
+    &__link {
+      font-size: 32px;
     }
   }
 }

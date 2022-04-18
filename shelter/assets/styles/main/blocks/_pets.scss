@@ -30,8 +30,6 @@
   }
 
   &__controllers {
-    margin-top: 20px;
-    margin-bottom: 40px;
     display: flex;
     gap: 80px;
     justify-content: center;
@@ -56,6 +54,11 @@
     &__control {
       position: static;
       top: 45%;
+    }
+
+    &__controllers {
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
   }
   .main-pets {

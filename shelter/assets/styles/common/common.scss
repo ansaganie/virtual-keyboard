@@ -1,0 +1,22 @@
+@use './_fonts.scss';
+@use './_normalize.scss';
+@use './blocks/components';
+@use './blocks/footer.scss';
+@use './blocks/header.scss';
+@use './blocks/card.scss';
+@use './_variables.scss' as vars;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 16.5px;
+  color: vars.$color-dark-l;
+}

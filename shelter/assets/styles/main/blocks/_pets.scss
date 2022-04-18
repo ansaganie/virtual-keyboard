@@ -4,7 +4,6 @@
   padding-top: 80px;
   padding-bottom: 100px;
   background-color: vars.$color-light-l;
-  max-height: 877px;
 }
 
 .pets {
@@ -19,8 +18,24 @@
 .slider {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+
+  &__container {
+    height: 435px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 20px;
+  }
+
+  &__controllers {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+  }
 
   &__control {
     position: absolute;
@@ -33,5 +48,28 @@
 
   &__next {
     right: 0;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .slider {
+    &__control {
+      position: static;
+      top: 45%;
+    }
+  }
+  .main-pets {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .pets {
+    &__wrapper {
+      gap: 0px;
+    }
+
+    &__heading {
+      margin-bottom: 40px;
+    }
   }
 }

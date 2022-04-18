@@ -846,7 +846,6 @@ body {
   padding-top: 80px;
   padding-bottom: 100px;
   background-color: #F6F6F6;
-  max-height: 877px;
 }
 
 .pets__wrapper {
@@ -859,8 +858,22 @@ body {
 .slider {
   position: relative;
   width: 100%;
+}
+.slider__container {
+  height: 435px;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 20px;
+}
+.slider__controllers {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 80px;
+  justify-content: center;
 }
 .slider__control {
   position: absolute;
@@ -873,6 +886,24 @@ body {
   right: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .slider__control {
+    position: static;
+    top: 45%;
+  }
+
+  .main-pets {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .pets__wrapper {
+    gap: 0px;
+  }
+  .pets__heading {
+    margin-bottom: 40px;
+  }
+}
 .main-help {
   padding-top: 80px;
   padding-bottom: 100px;

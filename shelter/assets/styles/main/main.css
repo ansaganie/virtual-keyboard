@@ -828,7 +828,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    padding: 40px 10px 40px 10px;
+    padding: 40px 25px 40px 25px;
   }
   .about__picture {
     margin-top: 40px;
@@ -980,14 +980,16 @@ body {
 }
 
 .donation__wrapper {
-  padding: 80px 40px 100px 720px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  padding: 80px 40px 100px 40px;
   min-height: 380px;
-  background-image: url("../../images/main/donation-dog.png");
-  background-position: 25% 50%;
-  background-size: 500px;
-  background-repeat: no-repeat;
+  gap: 30px;
+  justify-items: end;
+  align-items: center;
 }
 .donation__content {
+  justify-self: start;
   max-width: 380px;
   display: flex;
   flex-direction: column;
@@ -1043,6 +1045,40 @@ body {
   background-color: #FDDCC4;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .donation__wrapper {
+    padding: 80px 30px 100px 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .donation__wrapper {
+    padding: 40px 20px 40px 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .donation__content {
+    justify-content: center;
+    align-items: center;
+  }
+  .donation__heading, .donation__title, .donation__legal {
+    text-align: center;
+  }
+  .donation__picture {
+    width: 260px;
+  }
+
+  .bank-card__number {
+    font-size: 14px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+}
 .site-header {
   position: absolute;
   padding: 60px 0;

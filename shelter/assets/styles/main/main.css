@@ -588,6 +588,11 @@ body {
   color: #545454;
 }
 
+@media screen and (max-width: 767px) {
+  .heading--primary {
+    font-size: 25px;
+  }
+}
 .button--primary {
   padding: 15px 45px;
   background-color: #F1CDB3;
@@ -777,11 +782,12 @@ body {
   }
 }
 .about__wrapper {
-  padding: 94px 40px 100px 640px;
-  min-height: 588px;
-  background-image: url("../../images/main/about-pets.png");
-  background-position: 22%;
-  background-repeat: no-repeat;
+  padding: 94px 40px 100px 40px;
+  display: grid;
+  grid-template-columns: minmax(430px, 1fr) minmax(430px, 1fr);
+}
+.about__picture {
+  place-self: center;
 }
 
 .cozy {
@@ -802,6 +808,40 @@ body {
   color: #4C4C4C;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .about__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 80px 30px 100px 30px;
+  }
+  .about__picture {
+    margin-top: 80px;
+    place-self: center;
+  }
+
+  .cozy {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 40px 10px 40px 10px;
+  }
+  .about__picture {
+    margin-top: 40px;
+    place-self: center;
+  }
+
+  .cozy {
+    align-items: center;
+  }
+  .cozy__heading {
+    text-align: center;
+  }
+}
 .main-pets {
   padding-top: 80px;
   padding-bottom: 100px;

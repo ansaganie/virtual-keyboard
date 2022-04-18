@@ -588,6 +588,11 @@ body {
   color: #545454;
 }
 
+@media screen and (max-width: 767px) {
+  .heading--primary {
+    font-size: 25px;
+  }
+}
 .button--primary {
   padding: 15px 45px;
   background-color: #F1CDB3;

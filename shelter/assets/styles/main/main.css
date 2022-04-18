@@ -372,15 +372,119 @@ template {
   display: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .wrapper {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
+.heading--primary {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+@media screen and (max-width: 767px) {
+  .heading--primary {
+    font-size: 25px;
+  }
+}
+.button--primary {
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  color: #292929;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.button--primary:hover {
+  background-color: #FDDCC4;
+}
+
+.controller {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  background-color: transparent;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  cursor: pointer;
+}
+.controller:hover {
+  background-color: #F1CDB3;
+}
+.controller:disabled {
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+}
+.controller:disabled:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+.controller--active {
+  background-color: #F1CDB3;
+  cursor: auto;
+}
+
+.site-footer {
+  background: url("../../images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
 .footer__wrapper {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 160px;
   padding-top: 56px;
   padding-bottom: 60px;
-  background-image: url("../../images/common/footer-puppy.png");
-  background-position: right 30px bottom;
-  background-size: 300px;
-  background-repeat: no-repeat;
 }
 .footer__heading {
   text-align: left;
@@ -392,6 +496,9 @@ template {
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
+}
+.footer__picture {
+  margin-bottom: -60px;
 }
 
 .contact {
@@ -410,6 +517,30 @@ template {
   color: #F1CDB3;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 768px) {
+  .footer__wrapper {
+    column-gap: 60px;
+    row-gap: 65px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__wrapper {
+    padding-top: 30px;
+    gap: 40px;
+  }
+  .footer__heading {
+    text-align: center;
+    align-self: center;
+  }
+  .footer__picture {
+    width: 260px;
+    height: 269px;
+  }
+
+  .contact__text {
+    text-align: center;
+  }
+}
 .header__wrapper {
   display: flex;
   justify-content: space-between;
@@ -544,112 +675,6 @@ body {
   font-size: 15px;
   line-height: 16.5px;
   color: #545454;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-@media screen and (max-width: 1279px) and (min-width: 768px) {
-  .wrapper {
-    padding: 0 30px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .wrapper {
-    padding: 0 10px;
-  }
-}
-.heading--primary {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-family: "Georgia", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-}
-
-@media screen and (max-width: 767px) {
-  .heading--primary {
-    font-size: 25px;
-  }
-}
-.button--primary {
-  padding: 15px 45px;
-  background-color: #F1CDB3;
-  border-radius: 100px;
-  border: none;
-  font-family: Georgia, serif;
-  font-size: 17px;
-  line-height: 130%;
-  font-style: normal;
-  font-weight: normal;
-  color: #292929;
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-}
-.button--primary:hover {
-  background-color: #FDDCC4;
-}
-
-.controller {
-  width: 52px;
-  height: 52px;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #F1CDB3;
-  border-radius: 50%;
-  background-color: transparent;
-  font-family: "Georgia", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: #292929;
-  cursor: pointer;
-}
-.controller:hover {
-  background-color: #F1CDB3;
-}
-.controller:disabled {
-  border: 2px solid #CDCDCD;
-  color: #CDCDCD;
-}
-.controller:disabled:hover {
-  background-color: transparent;
-  cursor: auto;
-}
-.controller--active {
-  background-color: #F1CDB3;
-  cursor: auto;
-}
-
-.site-footer {
-  background: url("../../images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .main-start-page {

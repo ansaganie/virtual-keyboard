@@ -1,0 +1,118 @@
+@use '../_variables.scss' as vars;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media screen and (max-width:1279px) and (min-width:768px) {
+  .wrapper {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
+
+.heading--primary {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: vars.$color-dark-l;
+}
+
+@media screen and (max-width:767px) {
+  .heading--primary {
+    font-size: 25px;
+  }
+}
+
+.button--primary {
+  padding: 15px 45px;
+
+  background-color: vars.$color-primary;
+  border-radius: 100px;
+  border: none;
+
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: normal;
+  color: vars.$color-dark-3xl;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-primary-light;
+  }
+}
+
+.controller {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid vars.$color-primary;
+  border-radius: 50%;
+  background-color: transparent;
+
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: vars.$color-dark-3xl;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-primary;
+  }
+
+  &:disabled {
+    border: 2px solid vars.$color-dark-s;
+    color: vars.$color-dark-s;
+  }
+
+  &:disabled:hover {
+    background-color: transparent;
+    cursor: auto;
+  }
+
+  &--active {
+    background-color: vars.$color-primary;
+    cursor: auto;
+  }
+}

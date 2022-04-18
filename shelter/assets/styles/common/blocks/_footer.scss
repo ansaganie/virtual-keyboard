@@ -1,18 +1,19 @@
 @use '../_variables.scss' as vars;
 
+.site-footer {
+  background:
+    url('../../images/common/noise_lines_transparent@2X.png.png'),
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
 .footer {
   &__wrapper {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 160px;
     padding-top: 56px;
     padding-bottom: 60px;
-
-    background: {
-      image: url('../../images/common/footer-puppy.png');
-      position: right 30px bottom;
-      size: 300px;
-      repeat: no-repeat;
-    }
   }
 
   &__heading {
@@ -26,6 +27,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+  }
+
+  &__picture {
+    margin-bottom: -60px;
   }
 }
 
@@ -44,5 +49,39 @@
     line-height: 115%;
     letter-spacing: 0.06em;
     color: vars.$color-primary;
+  }
+}
+
+@media screen and (max-width:1279px) and (min-width:768px) {
+  .footer {
+    &__wrapper {
+      column-gap: 60px;
+      row-gap: 65px;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .footer {
+    &__wrapper {
+      padding-top: 30px;
+      gap: 40px;
+    }
+
+    &__heading {
+      text-align: center;
+      align-self: center;
+    }
+
+    &__picture {
+      width: 260px;
+      height: 269px;
+    }
+  }
+
+  .contact {
+    &__text {
+      text-align: center;
+    }
   }
 }

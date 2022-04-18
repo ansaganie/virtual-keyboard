@@ -29,6 +29,7 @@
 
 .pets-content {
   background-color: vars.$color-light-l;
+
   &__wrapper {
     padding-top: 80px;
     padding-bottom: 100px;
@@ -43,16 +44,47 @@
 .pets {
   &__catalog {
     width: 100%;
+    max-height: 1365px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
+    overflow: hidden;
   }
 
   &__controls {
     display: flex;
     gap: 20px;
+  }
+}
+
+@media screen and (max-width:1279px) and (min-width:768px) {
+  .header {
+    &__wrapper {
+      padding: 30px 30px;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .header {
+    &__wrapper {
+      padding: 30px 10px;
+    }
+  }
+
+  .pets-content {  
+    &__wrapper {
+      padding-top: 42px;
+      padding-bottom: 42px;
+    }
+  }
+
+  .pets {
+    &__controls {
+      gap: 10px;
+    }
   }
 }
 

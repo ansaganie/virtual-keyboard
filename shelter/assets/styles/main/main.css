@@ -638,12 +638,12 @@ template {
     transform: rotate(90deg);
   }
   .header__menu-button:focus + .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0px;
   }
   .header__menu {
-    position: absolute;
+    position: fixed;
     transition: right 0.5s;
     top: 0px;
     right: -100%;
@@ -652,7 +652,8 @@ template {
   .menu {
     width: 320px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     top: 0;
     background-color: #292929;
   }

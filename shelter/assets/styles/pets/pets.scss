@@ -27,22 +27,24 @@
   color: vars.$color-dark-3xl;
 }
 
-
+.burger-button--primary svg {
+  stroke: vars.$color-primary;
+}
 
 @media screen and (max-width:767px) {
-  .menu__logo > .logo__title {
+  .burger__logo > .logo__title {
     color: vars.$color-primary;
   }
 
-  .menu__logo > .logo__subtitle {
+  .burger__logo > .logo__subtitle {
     color: vars.$color-light-xl;
   }
 
-  .menu__item > .menu__link {
+  .burger__item > .burger__link {
     color: vars.$color-dark-s;
   }
   
-  .menu__item--active > .menu__link {
+  .burger__item--active > .burger__link {
     color: vars.$color-light-s;
   }
 }

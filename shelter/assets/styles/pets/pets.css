@@ -474,6 +474,10 @@ template {
   cursor: auto;
 }
 
+.mobile-menu__opened {
+  overflow: hidden;
+}
+
 .burger-button {
   padding: 0;
   margin: 0;
@@ -482,7 +486,7 @@ template {
   background-color: transparent;
   border: none;
   transform: rotate(0);
-  transition: transform 0.3s;
+  transition: all 0.3s;
 }
 .burger-button--open {
   transform: rotate(90deg);
@@ -578,7 +582,7 @@ template {
   top: 0;
   right: 0;
   background-color: #292929;
-  transition: transform 0.5s;
+  transition: all 0.5s;
   transform: translate(100%);
 }
 .burger--open {
@@ -787,20 +791,24 @@ body {
   color: #292929;
 }
 
+.burger-button--primary svg {
+  stroke: #F1CDB3;
+}
+
 @media screen and (max-width: 767px) {
-  .menu__logo > .logo__title {
+  .burger__logo > .logo__title {
     color: #F1CDB3;
   }
 
-  .menu__logo > .logo__subtitle {
+  .burger__logo > .logo__subtitle {
     color: #FFFFFF;
   }
 
-  .menu__item > .menu__link {
+  .burger__item > .burger__link {
     color: #CDCDCD;
   }
 
-  .menu__item--active > .menu__link {
+  .burger__item--active > .burger__link {
     color: #FAFAFA;
   }
 }

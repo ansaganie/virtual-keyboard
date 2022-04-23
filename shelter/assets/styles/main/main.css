@@ -474,6 +474,10 @@ template {
   cursor: auto;
 }
 
+.mobile-menu__opened {
+  overflow: hidden;
+}
+
 .burger-button {
   padding: 0;
   margin: 0;

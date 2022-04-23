@@ -1,20 +1,17 @@
 @use '../_variables.scss' as vars;
 
-.header {
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-  }
+.burger-button {
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  transform: rotate(0);
+  transition: transform 0.3s;
 
-  &__menu-button {
-    display: none;
-    padding: 0;
-    margin: 0;
-    height: 30px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
+  &--open {
+    transform: rotate(90deg);
   }
 }
 
@@ -22,7 +19,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-decoration: none;
 
   &__title {
@@ -44,29 +40,25 @@
   }
 }
 
-.menu {
-  &__header {
+.header {
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+
+  &__burger-button {
     display: none;
+    position: absolute;
+    top: 44px;
+    right: 53px;
+    z-index: 1000;
   }
+}
 
-  &__logo {
-    margin-right: 44px;
-  }
-
-  &__close-btn {
-    padding: 0;
-    margin: 0;
-    height: 30px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    transition: transform 0.5s;
-
-    &:focus {
-      transform: rotate(-90deg);
-    }
-  }
-
+.menu {
   &__wrapper {
     display: flex;
     gap: 35px;
@@ -101,88 +93,103 @@
   }
 }
 
-@media screen and (max-width:767px) {
-  .header {
+.mobile-menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vh;
+  height: 100vh;
+  z-index: 200;
+  background-color:  rgba(41, 41, 41, 0.6);
 
-    &__wrapper {
-      justify-content: start;
+  transition: all 0.3s;
+
+  &--open {
+    display: block;
+  }
+}
+
+.burger {
+  position: fixed;
+  width: 320px;
+  height: 100vh;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  background-color: vars.$color-dark-3xl;
+  transition: transform 0.5s;
+  
+  transform: translate(100%);
+
+  &--open {
+    transform: translate(0);
+  }
+
+  &__header {
+    display: none;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 30px 10px;
+    padding-bottom: 160px;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0 38px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+
+    &--active {
+      border-bottom: 3px solid vars.$color-primary;
     }
 
-    &__logo {
-      margin-right: 44px;
+    &--active > .menu__link {
+      color: vars.$color-light-s;
     }
 
-    &__menu-button {
-      display: block;
-      transition: transform 0.5s;
-
-      &:focus {
-        transform: rotate(90deg);
-      }
-
-      &:focus + .menu {
-        position: fixed;
-        top: 0;
-        right: 0px;
-      }
-    }
-
-    &__menu {
-      position: fixed;
-      transition: right 0.5s;
-      top: 0px;
-      right: -100%;
+    &:hover > .menu__link {
+      color: vars.$color-light-s;
     }
   }
 
-  .menu {
-    width: 320px;
-    height: 100vh;
-    position: fixed;
-    z-index: 100;
-    top: 0;
+  &__link {
+    font-size: 32px;
+    line-height: 160%;
+    color: vars.$color-light-l-2;
+    text-decoration: none;
+  }
+}
 
-    background-color: vars.$color-dark-3xl;
 
-    &__logo {
-      display: flex;
+@media screen and (max-width:767px) {
+  .header {
+    &__menu {
+      display: none;
     }
 
-    &__header {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      padding: 30px 10px;
-      padding-bottom: 160px;
-    }
-
-    &__wrapper {
-      padding: 0 38px;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    &__item {
-      margin: 0;
-      padding: 0;
-  
-      &--active {
-        border-bottom: 3px solid vars.$color-primary;
-      }
-  
-      &--active > .menu__link {
-        color: vars.$color-light-s;
-      }
-  
-      &:hover > .menu__link {
-        color: vars.$color-light-s;
-      }
-    }
-  
-    &__link {
-      font-size: 32px;
+    &__burger-button {
+      display: block;
     }
   }
 }

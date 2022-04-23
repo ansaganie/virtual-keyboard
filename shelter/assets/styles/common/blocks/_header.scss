@@ -98,9 +98,8 @@
 }
 
 .mobile-menu {
-  display: none;
   position: fixed;
-  left: 0;
+  left: 100%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -112,7 +111,7 @@
   transition: all 0.3s;
 
   &--open {
-    display: block;
+    left: 0;
   }
 }
 

@@ -558,9 +558,8 @@ template {
 }
 
 .mobile-menu {
-  display: none;
   position: fixed;
-  left: 0;
+  left: 100%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -568,10 +567,9 @@ template {
   height: 100vh;
   z-index: 200;
   background-color: rgba(41, 41, 41, 0.6);
-  transition: all 0.3s;
 }
 .mobile-menu--open {
-  display: block;
+  left: 0;
 }
 
 .burger {

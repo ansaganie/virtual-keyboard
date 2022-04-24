@@ -69,7 +69,6 @@ let initialSlide = getRandomSlide();
 let leftSlide = getRandomSlide(initialSlide);
 let rightSlide = getRandomSlide(initialSlide);
 const SCROLL_STEP = 100 / cardCount;
-let currentPosition = -SCROLL_STEP;
 
 const slidesNodes = [leftSlide, initialSlide, rightSlide].map((slide) => {
     return createCarouselSlide(slideIdCount++, '', slide.map(element => {
@@ -78,18 +77,18 @@ const slidesNodes = [leftSlide, initialSlide, rightSlide].map((slide) => {
 });
 
 SLIDER_CONTAINER.append(...slidesNodes);
-SLIDER_CONTAINER.childNodes[0].style.left = '-100%';
-SLIDER_CONTAINER.childNodes[2].style.left = '100%';
+SLIDER_CONTAINER.childNodes[0].style.left = `-${SCROLL_STEP}%`;
+SLIDER_CONTAINER.childNodes[1].style.left = '0%';
+SLIDER_CONTAINER.childNodes[2].style.left = `${SCROLL_STEP}%`;
 
 LEFT_BUTTON.addEventListener('click',() => {
-    SLIDER_CONTAINER.childNodes[2].style.left = '200%';
-    SLIDER_CONTAINER.childNodes[1].style.left = '100%';
+    SLIDER_CONTAINER.childNodes[1].style.left = `${SCROLL_STEP}%`;;
     SLIDER_CONTAINER.childNodes[0].style.left = '0%';
     rightSlide = initialSlide;
     initialSlide = leftSlide;
     leftSlide = getRandomSlide(initialSlide)
 
-    const newSlide = createCarouselSlide(slideIdCount++, '-100%',leftSlide.map(element => {
+    const newSlide = createCarouselSlide(slideIdCount++, `-${SCROLL_STEP}%`,leftSlide.map(element => {
         return createCardElement(element);
     }));
 
@@ -98,13 +97,13 @@ LEFT_BUTTON.addEventListener('click',() => {
 });
 
 RIGHT_BUTTON.addEventListener('click',() => {
-    SLIDER_CONTAINER.childNodes[1].style.left = '-100%';
+    SLIDER_CONTAINER.childNodes[1].style.left = `-${SCROLL_STEP}%`;
     SLIDER_CONTAINER.childNodes[2].style.left = '0%';
     leftSlide = initialSlide;
     initialSlide = rightSlide;
     rightSlide = getRandomSlide(initialSlide);
 
-    const newSlide = createCarouselSlide(slideIdCount++, '100%', rightSlide.map(element => {
+    const newSlide = createCarouselSlide(slideIdCount++, `${SCROLL_STEP}%`, rightSlide.map(element => {
         return createCardElement(element);
     }));
 

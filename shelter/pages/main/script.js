@@ -17,6 +17,7 @@ let cardIdCount = 0;
 let slideIdCount = 0; 
 let slideCount = 3;
 const pets = shuffle(window.pets).map((pet) => ({ ...pet, id: cardIdCount++ }));
+window.pets = pets;
 let containerWidth = `calc(100% * ${cardCount})`;
 let slideWidth = `calc(100% / ${cardCount})`;
 

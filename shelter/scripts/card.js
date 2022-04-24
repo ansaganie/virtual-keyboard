@@ -15,5 +15,15 @@ const createCardElement = (pet) => {
         </article>
     `.trim());
 
+    div.firstChild.addEventListener('click', () => {
+        const modalEvent = new CustomEvent('modal-open', {
+            detail: { petId: pet.id }
+        })
+
+        console.log(pet);
+
+        document.dispatchEvent(modalEvent);
+    });
+
     return div.firstChild;
 }

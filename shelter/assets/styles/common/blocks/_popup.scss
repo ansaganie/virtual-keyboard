@@ -1,7 +1,11 @@
 @use '../_variables.scss' as vars;
 
 .modal {
-  display: hidden;
+  display: none;
+
+  &--open {
+    display: block;
+  }
   
   &__blackout {
     position: fixed;
@@ -13,6 +17,10 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(41, 41, 41, 0.6);
+
+    &--hover {
+      cursor: pointer;
+    }
   }
 
   &__content {
@@ -37,14 +45,18 @@
   height: 100%;
 
   &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     overflow: hidden;
 
     img {
-      width: 500px;
+      width: fit-content;
       height: 500px;
-      background-size: cover;
     }
   }
 

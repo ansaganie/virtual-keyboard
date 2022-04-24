@@ -7,7 +7,7 @@ const MOBILE_MENU = document.querySelector('.mobile-menu');
 let isMobileMenuOpen = false;
 
 const openMenu = () => {
-    document.body.classList.add('mobile-menu__opened');
+    document.body.classList.add('overflow-hidden');
     SITE_HEADER.classList.add('header--hidden');
     MOBILE_MENU.classList.add('mobile-menu--open');
     BURGER.classList.add('burger--open');
@@ -16,7 +16,7 @@ const openMenu = () => {
 }
 
 const closeMenu = () => {
-    document.body.classList.remove('mobile-menu__opened');
+    document.body.classList.remove('overflow-hidden');
     SITE_HEADER.classList.remove('header--hidden');
     MOBILE_MENU.classList.remove('mobile-menu--open');
     BURGER.classList.remove('burger--open');

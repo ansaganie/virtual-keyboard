@@ -4,6 +4,7 @@
 @use './blocks/header.scss';
 @use './blocks/footer.scss';
 @use './blocks/card.scss';
+@use './blocks/popup.scss';
 @use './_variables.scss' as vars;
 
 * {
@@ -19,4 +20,8 @@ body {
   font-size: 15px;
   line-height: 16.5px;
   color: vars.$color-dark-l;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

@@ -474,10 +474,6 @@ template {
   cursor: auto;
 }
 
-.mobile-menu__opened {
-  overflow: hidden;
-}
-
 .burger-button {
   padding: 0;
   margin: 0;
@@ -764,6 +760,10 @@ body {
   font-size: 15px;
   line-height: 16.5px;
   color: #545454;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .site-header {

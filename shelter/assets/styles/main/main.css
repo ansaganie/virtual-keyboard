@@ -474,10 +474,6 @@ template {
   cursor: auto;
 }
 
-.mobile-menu__opened {
-  overflow: hidden;
-}
-
 .burger-button {
   padding: 0;
   margin: 0;
@@ -766,6 +762,10 @@ body {
   color: #545454;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .main-start-page {
   background: url("../../../assets/images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
@@ -972,15 +972,25 @@ body {
 .slider {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 .slider__container {
+  position: relative;
   height: 435px;
-  width: 100%;
+  width: 300%;
+  display: flex;
+}
+.slider .carousel-item {
+  position: absolute;
+  top: 0;
+  height: 435px;
+  width: 33.3333333333%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   overflow: hidden;
   gap: 20px;
+  transition: left 0.3s;
 }
 .slider__controllers {
   display: flex;

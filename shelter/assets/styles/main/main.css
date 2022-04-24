@@ -753,6 +753,8 @@ template {
   display: none;
 }
 .modal--open {
+  animation-name: appear;
+  animation-duration: 0.5s;
   display: block;
 }
 .modal__blackout {
@@ -959,6 +961,14 @@ body {
   overflow: hidden;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .main-start-page {
   background: url("../../../assets/images/common/noise_lines_transparent@2X.png.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }

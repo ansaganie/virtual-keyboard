@@ -4,6 +4,8 @@
   display: none;
 
   &--open {
+    animation-name: appear;
+    animation-duration: 0.5s;
     display: block;
   }
   

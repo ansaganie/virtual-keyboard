@@ -20,8 +20,6 @@ const createCardElement = (pet) => {
             detail: { petId: pet.id }
         })
 
-        console.log(pet);
-
         document.dispatchEvent(modalEvent);
     });
 

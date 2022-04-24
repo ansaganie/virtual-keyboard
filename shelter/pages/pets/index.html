@@ -165,11 +165,11 @@
           </article>
         </div>
         <div class="pets__controls">
-          <button type="button" class="controller" disabled><<</button>
-          <button type="button" class="controller" disabled><</button>
-          <button type="button" class="controller controller--active">1</button>
-          <button type="button" class="controller">></button>
-          <button type="button" class="controller">>></button>
+          <button type="button" id="first-page-btn" class="controller"><<</button>
+          <button type="button" id="prev-page-btn" class="controller"><</button>
+          <button type="button" id="current-page-btn" class="controller controller--active">1</button>
+          <button type="button" id="next-page-btn" class="controller">></button>
+          <button type="button" id="last-page-btn" class="controller">>></button>
         </div>
       </div>
     </section>
@@ -226,7 +226,7 @@
   </footer>
 
   <div class="modal">
-    <div class="modal__blackout">
+    <div class="modal__blackout" id="modal-blackout">
       <div class="modal__content">
         <button class="modal__close-btn controller">
           <svg fill="#292929" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -276,8 +276,10 @@
   </div>
 
   <script src="../../scripts/data.js"></script>
+  <script src="../../scripts/popup.js"></script>
   <script src="../../scripts/utils.js"></script>
   <script src="../../scripts/card.js"></script>
+  <script src="../../scripts/header.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>

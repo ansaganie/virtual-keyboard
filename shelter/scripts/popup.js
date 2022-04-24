@@ -37,13 +37,13 @@ const createBigCard = ({
                     <b>Age: </b> ${age}
                     </li>
                     <li class="details__item">
-                    <b>Inoculations: </b> ${inoculations}
+                    <b>Inoculations: </b> ${inoculations.join(', ')}
                     </li>
                     <li class="details__item">
-                    <b>Diseases: </b> ${diseases}
+                    <b>Diseases: </b> ${diseases.join(', ')}
                     </li>
                     <li class="details__item">
-                    <b>Parasites: </b> ${parasites}
+                    <b>Parasites: </b> ${parasites.join(', ')}
                     </li>
                 </ul>
             </div>

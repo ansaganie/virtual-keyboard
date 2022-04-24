@@ -753,6 +753,8 @@ template {
   display: none;
 }
 .modal--open {
+  animation-name: appear;
+  animation-duration: 0.5s;
   display: block;
 }
 .modal__blackout {
@@ -959,10 +961,19 @@ body {
   overflow: hidden;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .site-header {
   position: sticky;
   left: 0;
   top: 0;
+  z-index: 3000;
   background-color: #fff;
 }
 
@@ -1025,6 +1036,10 @@ body {
   row-gap: 30px;
   overflow: hidden;
 }
+.pets__catalog .card {
+  animation-name: appear;
+  animation-duration: 0.5s;
+}
 .pets__controls {
   display: flex;
   gap: 20px;
@@ -1033,6 +1048,12 @@ body {
 @media screen and (max-width: 1279px) and (min-width: 768px) {
   .header__wrapper {
     padding: 30px 30px;
+  }
+
+  .pets__catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1047,6 +1068,11 @@ body {
 
   .pets__controls {
     gap: 10px;
+  }
+  .pets__catalog {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
   }
 }
 

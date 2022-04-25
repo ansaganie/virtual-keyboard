@@ -5,6 +5,7 @@
   position: sticky;
   left: 0;
   top: 0;
+  z-index: 3000;
 
   background-color: #fff;
 }
@@ -27,22 +28,24 @@
   color: vars.$color-dark-3xl;
 }
 
-
+.burger-button--primary svg {
+  stroke: vars.$color-primary;
+}
 
 @media screen and (max-width:767px) {
-  .menu__logo > .logo__title {
+  .burger__logo > .logo__title {
     color: vars.$color-primary;
   }
 
-  .menu__logo > .logo__subtitle {
+  .burger__logo > .logo__subtitle {
     color: vars.$color-light-xl;
   }
 
-  .menu__item > .menu__link {
+  .burger__item > .burger__link {
     color: vars.$color-dark-s;
   }
   
-  .menu__item--active > .menu__link {
+  .burger__item--active > .burger__link {
     color: vars.$color-light-s;
   }
 }
@@ -71,6 +74,11 @@
     column-gap: 40px;
     row-gap: 30px;
     overflow: hidden;
+
+    .card {
+      animation-name: appear;
+      animation-duration: 0.5s;
+    }
   }
 
   &__controls {
@@ -83,6 +91,14 @@
   .header {
     &__wrapper {
       padding: 30px 30px;
+    }
+  }
+
+  .pets {
+    &__catalog {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
     }
   }
 }
@@ -104,6 +120,12 @@
   .pets {
     &__controls {
       gap: 10px;
+    }
+
+    &__catalog {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
     }
   }
 }

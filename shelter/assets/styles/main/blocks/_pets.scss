@@ -18,15 +18,26 @@
 .slider {
   position: relative;
   width: 100%;
+  overflow: hidden;
 
   &__container {
+    position: relative;
     height: 435px;
-    width: 100%;
+    width: calc(100% * 3);
+    display: flex;
+  }
+
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    height: 435px;
+    width: calc(100% / 3);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: hidden;
     gap: 20px;
+    transition: left 0.7s;
   }
 
   &__controllers {

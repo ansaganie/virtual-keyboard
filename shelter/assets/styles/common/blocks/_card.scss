@@ -12,9 +12,10 @@
   border-radius: 9px;
 
   cursor: pointer;
+  overflow: hidden;
 
   &__image {
-    width: 270px;
+    width: fit-content;
     height: 270px;
   }
 

@@ -1,9 +1,10 @@
 @use './_fonts.scss';
 @use './_normalize.scss';
 @use './blocks/components';
-@use './blocks/footer.scss';
 @use './blocks/header.scss';
+@use './blocks/footer.scss';
 @use './blocks/card.scss';
+@use './blocks/popup.scss';
 @use './_variables.scss' as vars;
 
 * {
@@ -19,4 +20,17 @@ body {
   font-size: 15px;
   line-height: 16.5px;
   color: vars.$color-dark-l;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

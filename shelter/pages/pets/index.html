@@ -15,27 +15,8 @@
         <span class="logo__title">Cozy House</span>
         <span class="logo__subtitle">Shelter for pets in Boston</span>
       </a>
-      <button type="button" class="header__menu-button">
-        <svg class="menu-button__icon" width="30" height="22" viewBox="0 0 30 22" stroke="#000" xmlns="http://www.w3.org/2000/svg">
-          <line y1="21" x2="30" y2="21" stroke-width="2"/>
-          <line y1="11" x2="30" y2="11" stroke-width="2"/>
-          <line y1="1" x2="30" y2="1" stroke-width="2"/>
-        </svg>          
-      </button>
+      
       <nav class="menu header__menu">
-        <div class="menu__header">
-          <a href="./index.html" class="logo menu__logo">
-            <span class="logo__title">Cozy House</span>
-            <span class="logo__subtitle">Shelter for pets in Boston</span>
-          </a>
-          <button type="button" class="menu__close-btn">
-            <svg width="30" height="30" viewBox="0 0 30 30" stroke="#F1CDB3" xmlns="http://www.w3.org/2000/svg">
-              <line x1="24" y1="30" x2="24" stroke-width="2"/>
-              <line x1="14" y1="30" x2="14" stroke-width="2"/>
-              <line x1="4" y1="30" x2="4" stroke-width="2"/>
-              </svg>
-          </button>
-        </div>
         <ul class="menu__wrapper">
           <li class="menu__item">
             <a href="../main" class="menu__link">About the shelter</a>
@@ -51,6 +32,40 @@
           </li>
         </ul>
       </nav>
+
+      <button type="button" class="burger-button header__burger-button">
+        <svg class="" width="30" height="22" viewBox="0 0 30 22" stroke="#000" xmlns="http://www.w3.org/2000/svg">
+          <line y1="21" x2="30" y2="21" stroke-width="2"/>
+          <line y1="11" x2="30" y2="11" stroke-width="2"/>
+          <line y1="1" x2="30" y2="1" stroke-width="2"/>
+        </svg>          
+      </button>
+
+      <div class="mobile-menu">
+        <nav class="burger mobile-menu__burger">
+          <div class="burger__header">
+            <a href="./index.html" class="logo burger__logo">
+              <span class="logo__title">Cozy House</span>
+              <span class="logo__subtitle">Shelter for pets in Boston</span>
+            </a>
+          </div>
+          
+          <ul class="burger__wrapper">
+            <li class="burger__item">
+              <a href="../main" class="burger__link">About the shelter</a>
+            </li>
+            <li class="burger__item burger__item--active">
+              <a class="burger__link">Our pets</a>
+            </li>
+            <li class="burger__item">
+              <a href="../main/#help" class="burger__link">Help the shelter</a>
+            </li>
+            <li class="burger__item">
+              <a href="#footer" class="burger__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -150,11 +165,11 @@
           </article>
         </div>
         <div class="pets__controls">
-          <button type="button" class="controller" disabled><<</button>
-          <button type="button" class="controller" disabled><</button>
-          <button type="button" class="controller controller--active">1</button>
-          <button type="button" class="controller">></button>
-          <button type="button" class="controller">>></button>
+          <button type="button" id="first-page-btn" class="controller"><<</button>
+          <button type="button" id="prev-page-btn" class="controller"><</button>
+          <button type="button" id="current-page-btn" class="controller controller--active">1</button>
+          <button type="button" id="next-page-btn" class="controller">></button>
+          <button type="button" id="last-page-btn" class="controller">>></button>
         </div>
       </div>
     </section>
@@ -209,5 +224,62 @@
       <img class="footer__picture" src="../../assets/images/common/footer-puppy.png" alt="Puppy's picture">
     </div>
   </footer>
+
+  <div class="modal">
+    <div class="modal__blackout" id="modal-blackout">
+      <div class="modal__content">
+        <button class="modal__close-btn controller">
+          <svg fill="#292929" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z"/>
+          </svg>
+        </button>
+        <div class="content__wrapper">
+          <article class="big-card">
+            <div class="big-card__left">
+              <img
+                src="../../assets/images/common/pets-charly.png"
+                alt="Charly"
+                width="500"
+                height="500"
+              >
+            </div>
+            
+            <div class="big-card__right">
+              <h2 class="big-card__name">Jennifer</h2>
+              <p class="big-card__breed">Dog - Labrador</p>
+              <p class="big-card__description">
+                Jennifer is a sweet 2 months old Labrador
+                that is patiently waiting to find a new forever
+                home. This girl really enjoys being able to go
+                outside to run and play, but won't hesitate to play
+                up a storm in the house if she has all of her favorite toys.
+              </p>
+              <ul class="details big-card__details">
+                <li class="details__item">
+                  <b>Age:</b> 2 months
+                </li>
+                <li class="details__item">
+                  <b>Inoculations:</b> none
+                </li>
+                <li class="details__item">
+                  <b>Diseases:</b> none
+                </li>
+                <li class="details__item">
+                  <b>Parasites:</b> none
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../scripts/data.js"></script>
+  <script src="../../scripts/popup.js"></script>
+  <script src="../../scripts/utils.js"></script>
+  <script src="../../scripts/card.js"></script>
+  <script src="../../scripts/header.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>

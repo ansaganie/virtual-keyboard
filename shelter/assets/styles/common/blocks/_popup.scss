@@ -10,6 +10,9 @@
   }
   
   &__blackout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -27,9 +30,7 @@
 
   &__content {
     position: relative;
-    margin: 188px auto 0 auto;
     width: 900px;
-    height: 500px;
     background-color: #FAFAFA;
     border-radius: 9px;
   }
@@ -143,14 +144,15 @@
 @media screen and (max-width:1279px) and (min-width:768px) {
   .modal {
     &__content {
-      margin: 260px auto 0 auto;
       width: 630px;
-      height: 350px;
     }
   }
   
   .big-card {
     &__left {
+      width: 350px;
+      height: 350px;
+
       img {
         width: 350px;
         height: 350px;
@@ -187,9 +189,7 @@
 @media screen and (max-width:767px) {
   .modal {
     &__content {
-      margin: 221px auto 0 auto;
       width: 240px;
-      height: 341px;
     }
   }
   

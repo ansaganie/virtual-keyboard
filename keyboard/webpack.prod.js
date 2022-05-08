@@ -1,7 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -14,6 +12,7 @@ module.exports = {
   output: {
     filename: 'static/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 
   optimization: {
@@ -25,7 +24,6 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html', minify: true }),
     new MiniCssExtractPlugin({ filename: 'static/[name].[contenthash].css' }),
   ],
@@ -35,6 +33,10 @@ module.exports = {
       {
         test: /\.s[ac]ss/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.html/i,
+        use: ['html-loader'],
       },
     ],
   },

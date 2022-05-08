@@ -1,3 +1,82 @@
+@use 'normalize.scss';
+
 body {
   box-sizing: border-box;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.site-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.site-textarea {
+  margin-bottom: 40px;
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    font-size: 30px;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.keys-container {
+  background-color: rgba(112, 164, 164, 0.8);
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid teal;
+}
+
+.key {
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0.5px solid #008080;
+  border-radius: 20px;
+  background-color: #53a2a2;
+
+  &:hover {
+    background-color: #274e4e;
+    color: #ccc;
+  }
+
+  &:active {
+    background-color: #478d8d;
+    border: 3px solid #014242;
+    color: #ccc;
+  }
+
+  font-size: 20px;
+  padding: 10px 16px;
+  color: #002828;
+
+  cursor: pointer;
+
+  &.two-place {
+    min-width: 100px;
+  }
+
+  &.five-place {
+    min-width: 250px;
+  }
 }

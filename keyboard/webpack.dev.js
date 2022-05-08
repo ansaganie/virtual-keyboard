@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     static: './src',
-    hot: true,
+    hot: false,
   },
 
   entry: './src/index.js',

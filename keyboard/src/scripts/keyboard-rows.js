@@ -1,7 +1,7 @@
 export default [
   [
     {
-      keyCode: 220,
+      code: 'IntlBackslash',
       main: { en: '§', ru: '>' },
       shift: { en: '±', ru: '<' },
       isLetter: false,
@@ -9,7 +9,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 49,
+      code: 'Digit1',
       main: { en: '1', ru: '' },
       shift: { en: '!', ru: '' },
       isLetter: false,
@@ -17,7 +17,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 50,
+      code: 'Digit',
       main: { en: '2', ru: '' },
       shift: { en: '@', ru: '' },
       isLetter: false,
@@ -25,7 +25,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 51,
+      code: 'Digit3',
       main: { en: '3', ru: '' },
       shift: { en: '#', ru: '' },
       isLetter: false,
@@ -33,7 +33,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 52,
+      code: 'Digit4',
       main: { en: '4', ru: '' },
       shift: { en: '$', ru: '' },
       isLetter: false,
@@ -41,7 +41,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 53,
+      code: 'Digit5',
       main: { en: '5', ru: '' },
       shift: { en: '%', ru: '' },
       isLetter: false,
@@ -49,7 +49,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 54,
+      code: 'Digit6',
       main: { en: '6', ru: '' },
       shift: { en: '^', ru: '' },
       isLetter: false,
@@ -57,7 +57,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 55,
+      code: 'Digit7',
       main: { en: '7', ru: '' },
       shift: { en: '&', ru: '' },
       isLetter: false,
@@ -65,7 +65,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 56,
+      code: 'Digit8',
       main: { en: '8', ru: '' },
       shift: { en: '*', ru: '' },
       isLetter: false,
@@ -73,7 +73,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 57,
+      code: 'Digit9',
       main: { en: '9', ru: '' },
       shift: { en: '(', ru: '' },
       isLetter: false,
@@ -81,7 +81,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 48,
+      code: 'Digit0',
       main: { en: '0', ru: '' },
       shift: { en: ')', ru: '' },
       isLetter: false,
@@ -89,7 +89,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 173,
+      code: 'Minus',
       main: { en: '-', ru: '' },
       shift: { en: '_', ru: '' },
       isLetter: false,
@@ -97,7 +97,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 61,
+      code: 'Equal',
       main: { en: '=', ru: '' },
       shift: { en: '+', ru: '' },
       isLetter: false,
@@ -105,7 +105,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 8,
+      code: 'Backspace',
       main: { en: 'Backspace', ru: 'Backspace' },
       shift: { en: 'Backspace', ru: 'Backspace' },
       isLetter: false,
@@ -115,7 +115,7 @@ export default [
   ],
   [
     {
-      keyCode: 16,
+      code: 'Tab',
       main: { en: 'Tab', ru: 'Tab' },
       shift: { en: 'Tab', ru: 'Tab' },
       isLetter: false,
@@ -123,7 +123,7 @@ export default [
       className: 'two-place',
     },
     {
-      keyCode: 81,
+      code: 'KeyQ',
       main: { en: 'q', ru: '' },
       shift: { en: 'Q', ru: '' },
       isLetter: true,
@@ -131,7 +131,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 87,
+      code: 'KeyW',
       main: { en: 'w', ru: '' },
       shift: { en: 'W', ru: '' },
       isLetter: true,
@@ -139,7 +139,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 69,
+      code: 'KeyE',
       main: { en: 'e', ru: '' },
       shift: { en: 'E', ru: '' },
       isLetter: true,
@@ -147,7 +147,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 82,
+      code: 'KeyR',
       main: { en: 'r', ru: '' },
       shift: { en: 'R', ru: '' },
       isLetter: true,
@@ -155,7 +155,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 84,
+      code: 'KeyT',
       main: { en: 't', ru: '' },
       shift: { en: 'T', ru: '' },
       isLetter: true,
@@ -163,7 +163,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 89,
+      code: 'KeyY',
       main: { en: 'y', ru: '' },
       shift: { en: 'Y', ru: '' },
       isLetter: true,
@@ -171,7 +171,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 85,
+      code: 'KeyU',
       main: { en: 'u', ru: '' },
       shift: { en: 'U', ru: '' },
       isLetter: true,
@@ -179,7 +179,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 73,
+      code: 'KeyI',
       main: { en: 'i', ru: '' },
       shift: { en: 'I', ru: '' },
       isLetter: true,
@@ -187,7 +187,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 79,
+      code: 'KeyO',
       main: { en: 'o', ru: '' },
       shift: { en: 'O', ru: '' },
       isLetter: true,
@@ -195,7 +195,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 80,
+      code: 'KeyP',
       main: { en: 'p', ru: '' },
       shift: { en: 'P', ru: '' },
       isLetter: true,
@@ -203,7 +203,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 219,
+      code: 'BracketLeft',
       main: { en: '[', ru: '' },
       shift: { en: '{', ru: '' },
       isLetter: false,
@@ -211,7 +211,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 221,
+      code: 'BracketRight',
       main: { en: ']', ru: '' },
       shift: { en: '}', ru: '' },
       isLetter: false,
@@ -219,7 +219,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 220,
+      code: 'Backslash',
       main: { en: '\\', ru: '' },
       shift: { en: '|', ru: '' },
       isLetter: false,
@@ -229,7 +229,7 @@ export default [
   ],
   [
     {
-      keyCode: 20,
+      code: 'CapsLock',
       main: { en: 'CapsLock', ru: 'CapsLock' },
       shift: { en: 'CapsLock', ru: 'CapsLock' },
       isLetter: false,
@@ -237,7 +237,7 @@ export default [
       className: 'two-place',
     },
     {
-      keyCode: 65,
+      code: 'KeyA',
       main: { en: 'a', ru: '' },
       shift: { en: 'A', ru: '' },
       isLetter: true,
@@ -245,7 +245,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 83,
+      code: 'KeyS',
       main: { en: 's', ru: '' },
       shift: { en: 'S', ru: '' },
       isLetter: true,
@@ -253,7 +253,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 68,
+      code: 'KeyD',
       main: { en: 'd', ru: '' },
       shift: { en: 'D', ru: '' },
       isLetter: true,
@@ -261,7 +261,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 70,
+      code: 'KeyF',
       main: { en: 'f', ru: '' },
       shift: { en: 'F', ru: '' },
       isLetter: true,
@@ -269,7 +269,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 71,
+      code: 'KeyG',
       main: { en: 'g', ru: '' },
       shift: { en: 'G', ru: '' },
       isLetter: true,
@@ -277,7 +277,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 72,
+      code: 'KeyH',
       main: { en: 'h', ru: '' },
       shift: { en: 'H', ru: '' },
       isLetter: true,
@@ -285,7 +285,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 74,
+      code: 'KeyJ',
       main: { en: 'j', ru: '' },
       shift: { en: 'J', ru: '' },
       isLetter: true,
@@ -293,7 +293,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 75,
+      code: 'KeyK',
       main: { en: 'k', ru: '' },
       shift: { en: 'K', ru: '' },
       isLetter: true,
@@ -301,7 +301,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 76,
+      code: 'KeyL',
       main: { en: 'l', ru: '' },
       shift: { en: 'L', ru: '' },
       isLetter: true,
@@ -309,7 +309,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 59,
+      code: 'Semicolon',
       main: { en: ';', ru: '' },
       shift: { en: ':', ru: '' },
       isLetter: false,
@@ -317,7 +317,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 222,
+      code: 'Quote',
       main: { en: '\'', ru: '' },
       shift: { en: '"', ru: '' },
       isLetter: false,
@@ -325,7 +325,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 13,
+      code: 'Enter',
       main: { en: 'Enter', ru: 'Enter' },
       shift: { en: 'Enter', ru: 'Enter' },
       isLetter: false,
@@ -335,15 +335,15 @@ export default [
   ],
   [
     {
-      keyCode: 16,
+      code: 'ShiftLeft',
       main: { en: 'Shift', ru: 'Shift' },
       shift: { en: 'Shift', ru: 'Shift' },
       isLetter: false,
       element: null,
-      className: 'two-place',
+      className: 'shift-key',
     },
     {
-      keyCode: 192,
+      code: 'Backquote',
       main: { en: '`', ru: '' },
       shift: { en: '~', ru: '' },
       isLetter: false,
@@ -351,7 +351,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 90,
+      code: 'KeyZ',
       main: { en: 'z', ru: '' },
       shift: { en: 'Z', ru: '' },
       isLetter: true,
@@ -359,7 +359,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 88,
+      code: 'KeyX',
       main: { en: 'x', ru: '' },
       shift: { en: 'X', ru: '' },
       isLetter: true,
@@ -367,7 +367,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 67,
+      code: 'KeyC',
       main: { en: 'c', ru: '' },
       shift: { en: 'C', ru: '' },
       isLetter: true,
@@ -375,7 +375,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 86,
+      code: 'KeyV',
       main: { en: 'v', ru: '' },
       shift: { en: 'V', ru: '' },
       isLetter: true,
@@ -383,7 +383,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 66,
+      code: 'KeyB',
       main: { en: 'b', ru: '' },
       shift: { en: 'B', ru: '' },
       isLetter: true,
@@ -391,7 +391,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 78,
+      code: 'KeyN',
       main: { en: 'n', ru: '' },
       shift: { en: 'N', ru: '' },
       isLetter: true,
@@ -399,7 +399,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 77,
+      code: 'KeyM',
       main: { en: 'm', ru: '' },
       shift: { en: 'M', ru: '' },
       isLetter: true,
@@ -407,7 +407,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 188,
+      code: 'Comma',
       main: { en: ',', ru: '' },
       shift: { en: '<', ru: '' },
       isLetter: false,
@@ -415,7 +415,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 190,
+      code: 'Period',
       main: { en: '.', ru: '' },
       shift: { en: '>', ru: '' },
       isLetter: false,
@@ -423,7 +423,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 191,
+      code: 'Slash',
       main: { en: '/', ru: '' },
       shift: { en: '?', ru: '' },
       isLetter: false,
@@ -431,26 +431,33 @@ export default [
       className: '',
     },
     {
-      keyCode: 16,
+      code: 'ArrowUp',
+      main: { en: '&uarr;', ru: '&uarr;' },
+      shift: { en: '&uarr;', ru: '&uarr;' },
+      isLetter: false,
+      element: null,
+      className: 'arrow-key',
+    },
+    {
+      code: 'ShiftRight',
       main: { en: 'Shift', ru: 'Shift' },
       shift: { en: 'Shift', ru: 'Shift' },
       isLetter: false,
       element: null,
-      className: 'two-place',
+      className: 'shift-key',
     },
   ],
   [
     {
-      keyCode: 17,
+      code: 'ControlLeft',
       main: { en: 'Control', ru: 'Control' },
       shift: { en: 'Control', ru: 'Control' },
       isLetter: false,
       element: null,
       className: '',
-      location: 1,
     },
     {
-      keyCode: 18,
+      code: 'AltLeft',
       main: { en: 'Opt', ru: 'Opt' },
       shift: { en: 'Opt', ru: 'Opt' },
       isLetter: false,
@@ -458,7 +465,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 224,
+      code: 'OSLeft',
       main: { en: 'Cmd', ru: 'Cmd' },
       shift: { en: 'Cmd', ru: 'Cmd' },
       isLetter: false,
@@ -466,7 +473,7 @@ export default [
       className: '',
     },
     {
-      keyCode: 32,
+      code: 'Space',
       main: { en: 'Space', ru: 'Space' },
       shift: { en: 'Space', ru: 'Space' },
       isLetter: false,
@@ -474,7 +481,7 @@ export default [
       className: 'five-place',
     },
     {
-      keyCode: 224,
+      code: 'OSRight',
       main: { en: 'Cmd', ru: 'Cmd' },
       shift: { en: 'Cmd', ru: 'Cmd' },
       isLetter: false,
@@ -482,12 +489,36 @@ export default [
       className: '',
     },
     {
-      keyCode: 18,
+      code: 'AltRight',
       main: { en: 'Opt', ru: 'Opt' },
       shift: { en: 'Opt', ru: 'Opt' },
       isLetter: false,
       element: null,
       className: '',
+    },
+    {
+      code: 'ArrowLeft',
+      main: { en: '&larr;', ru: '&larr;' },
+      shift: { en: '&larr;', ru: '&larr;' },
+      isLetter: false,
+      element: null,
+      className: 'arrow-key',
+    },
+    {
+      code: 'ArrowDown',
+      main: { en: '&darr;', ru: '&darr;' },
+      shift: { en: '&darr;', ru: '&darr;' },
+      isLetter: false,
+      element: null,
+      className: 'arrow-key',
+    },
+    {
+      code: 'ArrowRight',
+      main: { en: '&rarr;', ru: '&rarr;' },
+      shift: { en: '&rarr;', ru: '&rarr;' },
+      isLetter: false,
+      element: null,
+      className: 'arrow-key',
     },
   ],
 ];

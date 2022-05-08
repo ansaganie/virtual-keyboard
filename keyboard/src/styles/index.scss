@@ -1,6 +1,6 @@
 @use 'normalize.scss';
 
-body {
+* {
   box-sizing: border-box;
 }
 
@@ -60,9 +60,15 @@ body {
     color: #ccc;
   }
 
-  &:active {
+  &--active {
     background-color: #478d8d;
     border: 3px solid #014242;
+    color: #ccc;
+  }
+
+  &--caps-active {
+    background-color: #47558d;
+    border: 3px solid #010742;
     color: #ccc;
   }
 
@@ -73,10 +79,27 @@ body {
   cursor: pointer;
 
   &.two-place {
-    min-width: 100px;
+    min-width: 135px;
+  }
+
+  &.two-place {
+    min-width: 135px;
+  }
+
+  &.shift-key {
+    min-width: 80px;
+  }
+
+  &.arrow-key {
+    min-width: 60px;
+    background-color: teal;
+
+    &:hover {
+      border: 3px solid #ccc;
+    }
   }
 
   &.five-place {
-    min-width: 250px;
+    min-width: 224px;
   }
 }

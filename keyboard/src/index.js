@@ -95,40 +95,67 @@ class Keyboard {
   }
 
   activateVirtualKeyboardHandlers() {
-    this.keyboardContainer.addEventListener('mousedown', (evt) => {
-      const code = evt.target.id;
+    const handleHighlightMousedown = (evt) => {
+      this.handleKeyboardHighlight(evt.target.id, 'add');
+    };
 
-      this.handleKeyboardHighlight(code, 'add');
+    const handleShiftMousedown = (evt) => {
+      const code = evt.target.id;
 
       if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
         this.handleShift('shift');
       }
-    });
+    };
 
-    this.keyboardContainer.addEventListener('click', (evt) => {
-      const code = evt.target.id;
-
+    const handleCapsLockClick = (evt) => {
       if (evt.target.id === CAPS_LOCK) {
         this.capsLock = !this.capsLock;
         this.handleCapsLock();
       }
+    };
 
+    const handleTextPrintClick = (evt) => {
+      const code = evt.target.id;
       const canPrintText = code && code !== 'keyboard-container' && !CONTROL_KEYS.has(code);
 
       if (canPrintText) {
         this.printText(code, evt.target.textContent);
       }
-    });
+    };
 
-    this.keyboardContainer.addEventListener('mouseup', (evt) => {
+    const handleArrowKeysClick = (evt) => {
       const code = evt.target.id;
 
-      this.handleKeyboardHighlight(code, 'remove');
+      if (code.startsWith('Arrow')) {
+        this.changeCursorPosition(code);
+      }
+    };
+
+    const handleHighlightMouseup = (evt) => {
+      this.handleKeyboardHighlight(evt.target.id, 'remove');
+    };
+
+    const handleShiftMouseup = (evt) => {
+      const code = evt.target.id;
 
       if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
         this.handleShift('main');
       }
-    });
+    };
+
+    this.keyboardContainer.addEventListener('click', compose([
+      handleCapsLockClick,
+      handleTextPrintClick,
+      handleArrowKeysClick,
+    ]));
+    this.keyboardContainer.addEventListener('mousedown', compose([
+      handleHighlightMousedown,
+      handleShiftMousedown,
+    ]));
+    this.keyboardContainer.addEventListener('mouseup', compose([
+      handleHighlightMouseup,
+      handleShiftMouseup,
+    ]));
   }
 
   handleCapsLock() {
@@ -199,9 +226,76 @@ class Keyboard {
         cursorStart += 1;
     }
 
-    if (document.activeElement !== this.textarea) {
-      this.textarea.focus();
+    this.textarea.focus();
+    this.textarea.setSelectionRange(cursorStart, cursorStart);
+  }
+
+  changeCursorPosition(code) {
+    let cursorStart = this.textarea.selectionStart;
+
+    const firstPart = this.textarea.value.slice(0, cursorStart);
+    const secondPart = this.textarea.value.slice(cursorStart);
+
+    switch (code) {
+      case 'ArrowLeft':
+        cursorStart = cursorStart - 1 >= 0 ? cursorStart - 1 : 0;
+        break;
+
+      case 'ArrowRight':
+        cursorStart += 1;
+        break;
+
+      case 'ArrowUp': {
+        const upperLines = firstPart.split('\n');
+
+        if (upperLines.length > 1) {
+          const upperLineLength = upperLines[upperLines.length - 2].length;
+          const currentLinePosition = upperLines[upperLines.length - 1].length;
+
+          if (upperLineLength < currentLinePosition) {
+            cursorStart = upperLines
+              .slice(0, upperLines.length - 1)
+              .reduce((acc, val) => acc + val.length + 1, 0) - 1;
+          } else {
+            const upperLinesLength = upperLines
+              .slice(0, upperLines.length - 2)
+              .reduce((acc, val) => acc + val.length + 1, 0);
+            cursorStart = upperLinesLength + currentLinePosition;
+          }
+        }
+
+        break;
+      }
+
+      case 'ArrowDown': {
+        const belowLines = secondPart.split('\n');
+
+        if (belowLines.length > 1) {
+          const upperLines = firstPart.split('\n');
+          const currentLineIndex = upperLines.length - 1;
+          const currentLinePosition = upperLines[currentLineIndex].length;
+          const belowLineLength = belowLines[1].length;
+          const allLines = this.textarea.value.split('\n');
+
+          if (belowLineLength < currentLinePosition) {
+            cursorStart = allLines.slice(0, upperLines.length + 1)
+              .reduce((acc, val) => acc + val.length + 1, 0) - 1;
+          } else {
+            const upperLinesLength = allLines.slice(0, currentLineIndex + 1)
+              .reduce((acc, val) => acc + val.length + 1, 0);
+
+            cursorStart = upperLinesLength + currentLinePosition;
+          }
+        }
+
+        break;
+      }
+
+      default:
+        break;
     }
+
+    this.textarea.focus();
     this.textarea.setSelectionRange(cursorStart, cursorStart);
   }
 

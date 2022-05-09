@@ -13,7 +13,7 @@ export const CONTROL_KEYS = new Set([
   'ArrowRight',
 ]);
 
-export const getKeyboardLayout = (lang) => [
+export const getKeyboardLayout = (lang = 'en') => [
   [
     {
       code: 'IntlBackslash',
@@ -23,7 +23,6 @@ export const getKeyboardLayout = (lang) => [
       },
       shift: { en: '±', ru: '<' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -31,15 +30,13 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '1', ru: '1' },
       shift: { en: '!', ru: '!' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
-      code: 'Digit',
+      code: 'Digit2',
       main: { en: '2', ru: '2' },
       shift: { en: '@', ru: '"' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -47,7 +44,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '3', ru: '3' },
       shift: { en: '#', ru: '№' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -55,7 +51,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '4', ru: '4' },
       shift: { en: '$', ru: '%' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -63,7 +58,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '5', ru: '5' },
       shift: { en: '%', ru: ':' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -71,7 +65,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '6', ru: '6' },
       shift: { en: '^', ru: ',' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -79,7 +72,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '7', ru: '7' },
       shift: { en: '&', ru: '.' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -87,7 +79,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '8', ru: '8' },
       shift: { en: '*', ru: ';' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -95,7 +86,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '9', ru: '9' },
       shift: { en: '(', ru: '(' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -103,7 +93,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '0', ru: '0' },
       shift: { en: ')', ru: ')' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -111,7 +100,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '-', ru: '-' },
       shift: { en: '_', ru: '_' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -119,7 +107,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '=', ru: '=' },
       shift: { en: '+', ru: '+' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -127,7 +114,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Backspace', ru: 'Backspace' },
       shift: { en: 'Backspace', ru: 'Backspace' },
       isLetter: false,
-      element: null,
       className: 'two-place',
     },
   ],
@@ -137,7 +123,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Tab', ru: 'Tab' },
       shift: { en: 'Tab', ru: 'Tab' },
       isLetter: false,
-      element: null,
       className: 'shift-key',
     },
     {
@@ -145,7 +130,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'q', ru: 'й' },
       shift: { en: 'Q', ru: 'Й' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -153,7 +137,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'w', ru: 'ц' },
       shift: { en: 'W', ru: 'Ц' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -161,7 +144,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'e', ru: 'у' },
       shift: { en: 'E', ru: 'У' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -169,7 +151,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'r', ru: 'к' },
       shift: { en: 'R', ru: 'К' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -177,7 +158,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 't', ru: 'е' },
       shift: { en: 'T', ru: 'Е' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -185,7 +165,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'y', ru: 'н' },
       shift: { en: 'Y', ru: 'Н' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -193,7 +172,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'u', ru: 'г' },
       shift: { en: 'U', ru: 'Г' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -201,7 +179,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'i', ru: 'ш' },
       shift: { en: 'I', ru: 'Ш' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -209,7 +186,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'o', ru: 'щ' },
       shift: { en: 'O', ru: 'Щ' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -217,7 +193,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'p', ru: 'з' },
       shift: { en: 'P', ru: 'З' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -225,7 +200,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '[', ru: 'х' },
       shift: { en: '{', ru: 'Х' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -233,7 +207,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: ']', ru: 'ъ' },
       shift: { en: '}', ru: 'Ъ' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -241,7 +214,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '\\', ru: 'ё' },
       shift: { en: '|', ru: 'Ё' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -249,7 +221,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Del', ru: 'Del' },
       shift: { en: 'Del', ru: 'Del' },
       isLetter: false,
-      element: null,
       className: 'shift-key',
     },
   ],
@@ -259,7 +230,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'CapsLock', ru: 'CapsLock' },
       shift: { en: 'CapsLock', ru: 'CapsLock' },
       isLetter: false,
-      element: null,
       className: 'two-place',
     },
     {
@@ -267,7 +237,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'a', ru: 'ф' },
       shift: { en: 'A', ru: 'Ф' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -275,7 +244,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 's', ru: 'ы' },
       shift: { en: 'S', ru: 'Ы' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -283,7 +251,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'd', ru: 'в' },
       shift: { en: 'D', ru: 'В' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -291,7 +258,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'f', ru: 'а' },
       shift: { en: 'F', ru: 'А' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -299,7 +265,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'g', ru: 'п' },
       shift: { en: 'G', ru: 'П' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -307,7 +272,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'h', ru: 'р' },
       shift: { en: 'H', ru: 'Р' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -315,7 +279,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'j', ru: 'о' },
       shift: { en: 'J', ru: 'О' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -323,7 +286,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'k', ru: 'л' },
       shift: { en: 'K', ru: 'Л' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -331,7 +293,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'l', ru: 'д' },
       shift: { en: 'L', ru: 'Д' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -339,7 +300,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: ';', ru: 'ж' },
       shift: { en: ':', ru: 'Ж' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -347,7 +307,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '\'', ru: 'э' },
       shift: { en: '"', ru: 'Э' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -355,7 +314,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Enter', ru: 'Enter' },
       shift: { en: 'Enter', ru: 'Enter' },
       isLetter: false,
-      element: null,
       className: 'two-place',
     },
   ],
@@ -365,7 +323,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Shift', ru: 'Shift' },
       shift: { en: 'Shift', ru: 'Shift' },
       isLetter: false,
-      element: null,
       className: 'shift-key',
     },
     {
@@ -373,7 +330,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '`', ru: ']' },
       shift: { en: '~', ru: '[' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -381,7 +337,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'z', ru: 'я' },
       shift: { en: 'Z', ru: 'Я' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -389,7 +344,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'x', ru: 'ч' },
       shift: { en: 'X', ru: 'Ч' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -397,7 +351,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'c', ru: 'с' },
       shift: { en: 'C', ru: 'С' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -405,7 +358,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'v', ru: 'м' },
       shift: { en: 'V', ru: 'М' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -413,7 +365,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'b', ru: 'и' },
       shift: { en: 'B', ru: 'И' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -421,7 +372,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'n', ru: 'т' },
       shift: { en: 'N', ru: 'Т' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -429,7 +379,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'm', ru: 'ь' },
       shift: { en: 'M', ru: 'Ь' },
       isLetter: true,
-      element: null,
       className: '',
     },
     {
@@ -437,7 +386,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: ',', ru: 'б' },
       shift: { en: '<', ru: 'Б' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -445,7 +393,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '.', ru: 'ю' },
       shift: { en: '>', ru: 'Ю' },
       isLetter: lang === 'ru',
-      element: null,
       className: '',
     },
     {
@@ -453,7 +400,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '/', ru: '/' },
       shift: { en: '?', ru: '?' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -461,7 +407,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '&uarr;', ru: '&uarr;' },
       shift: { en: '&uarr;', ru: '&uarr;' },
       isLetter: false,
-      element: null,
       className: 'arrow-key',
     },
     {
@@ -469,7 +414,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Shift', ru: 'Shift' },
       shift: { en: 'Shift', ru: 'Shift' },
       isLetter: false,
-      element: null,
       className: 'shift-key',
     },
   ],
@@ -479,7 +423,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Control', ru: 'Control' },
       shift: { en: 'Control', ru: 'Control' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -487,15 +430,13 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Opt', ru: 'Opt' },
       shift: { en: 'Opt', ru: 'Opt' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
-      code: 'OSLeft',
+      code: 'MetaLeft',
       main: { en: 'Cmd', ru: 'Cmd' },
       shift: { en: 'Cmd', ru: 'Cmd' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -503,15 +444,13 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Space', ru: 'Space' },
       shift: { en: 'Space', ru: 'Space' },
       isLetter: false,
-      element: null,
       className: 'five-place',
     },
     {
-      code: 'OSRight',
+      code: 'MetaRight',
       main: { en: 'Cmd', ru: 'Cmd' },
       shift: { en: 'Cmd', ru: 'Cmd' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -519,7 +458,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: 'Opt', ru: 'Opt' },
       shift: { en: 'Opt', ru: 'Opt' },
       isLetter: false,
-      element: null,
       className: '',
     },
     {
@@ -527,7 +465,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '&larr;', ru: '&larr;' },
       shift: { en: '&larr;', ru: '&larr;' },
       isLetter: false,
-      element: null,
       className: 'arrow-key',
     },
     {
@@ -535,7 +472,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '&darr;', ru: '&darr;' },
       shift: { en: '&darr;', ru: '&darr;' },
       isLetter: false,
-      element: null,
       className: 'arrow-key',
     },
     {
@@ -543,7 +479,6 @@ export const getKeyboardLayout = (lang) => [
       main: { en: '&rarr;', ru: '&rarr;' },
       shift: { en: '&rarr;', ru: '&rarr;' },
       isLetter: false,
-      element: null,
       className: 'arrow-key',
     },
   ],

@@ -265,7 +265,7 @@ class Keyboard {
     }
   }
 
-  printText(code, letter) {
+  printText(code, letter = '') {
     let cursorStart = this.textarea.selectionStart;
     const cursorEnd = this.textarea.selectionEnd;
 
@@ -451,4 +451,4 @@ class Keyboard {
   }
 }
 
-new Keyboard(document.querySelector('#root')).init();
+new Keyboard(document.body).init();

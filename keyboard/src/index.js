@@ -1,21 +1,26 @@
 import './styles/index.scss';
-import { KEYBOARD_ROWS, CONTROL_KEYS } from './scripts/keyboard-rows';
+import { getKeyboardLayout, CONTROL_KEYS } from './scripts/keyboard-rows';
 import createElementFromString from './scripts/create-element-from-string';
 import compose from './scripts/compose';
 
+const LANGUAGE_STORAGE_KEY = 'keyboard-lang';
 const CAPS_LOCK = 'CapsLock';
-const SHIFT_LEFT = 'ShiftLeft';
-const SHIFT_RIGHT = 'ShiftRight';
+const SHIFT = 'Shift';
+const ALT = 'Alt';
 const TAB = 'Tab';
-class Keyboard {
-  constructor(keyboardRows, rootElement) {
-    this.keyboardRows = keyboardRows;
-    this.keyboardRowsFlat = keyboardRows.flat();
-    this.letterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => isLetter);
-    this.nonLetterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => !isLetter);
 
-    this.lang = localStorage.getItem('keyboard-lang') || 'en';
-    this.capsLock = false;
+class Keyboard {
+  constructor(rootElement) {
+    this.keyboardRows = null;
+    this.keyboardRowsFlat = null;
+    this.letterKeys = null;
+    this.nonLetterKeys = null;
+
+    this.lang = localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'en';
+    this.isCapsLock = false;
+    this.isAlt = false;
+    this.isShift = false;
+    this.keyPressed = {};
 
     this.root = rootElement;
     this.keyElements = {};
@@ -24,12 +29,20 @@ class Keyboard {
   }
 
   init() {
+    this.getKeyboardLayout();
     this.renderHeader();
     this.renderMain();
     this.textarea = document.querySelector('#text');
     this.keyboardContainer = document.querySelector('#keyboard-container');
     this.activatePhysicalKeyboardHandlers();
     this.activateVirtualKeyboardHandlers();
+  }
+
+  getKeyboardLayout() {
+    this.keyboardRows = getKeyboardLayout(this.lang);
+    this.keyboardRowsFlat = this.keyboardRows.flat();
+    this.letterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => isLetter);
+    this.nonLetterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => !isLetter);
   }
 
   handleKeyboardHighlight(code, method) {
@@ -45,16 +58,10 @@ class Keyboard {
       this.handleKeyboardHighlight(evt.code, 'add');
     };
 
-    const handleCapsLockKeydown = (evt) => {
-      if (evt.code === CAPS_LOCK) {
-        this.capsLock = evt.getModifierState(CAPS_LOCK);
-        this.handleCapsLock();
-      }
-    };
-
     const handleShiftKeydown = (evt) => {
-      if (evt.code === SHIFT_LEFT || evt.code === SHIFT_RIGHT) {
-        this.handleShift('shift');
+      if (evt.code.startsWith(SHIFT)) {
+        this.isShift = true;
+        this.updateKeyboard();
       }
     };
 
@@ -68,30 +75,55 @@ class Keyboard {
       }
     };
 
+    const handleOptKeydown = (evt) => {
+      if (evt.code.startsWith(ALT)) {
+        this.isAlt = true;
+      }
+    };
+
+    const handleLanguageChange = () => {
+      this.handleLayoutChange();
+    };
+
+    const handleCapsLockChange = (evt) => {
+      if (evt.code === CAPS_LOCK) {
+        this.isCapsLock = evt.getModifierState(CAPS_LOCK);
+
+        this.handleCapsLock();
+      }
+    };
+
     const handleHighlightKeyup = (evt) => {
       this.handleKeyboardHighlight(evt.code, 'remove');
     };
 
     const handleShiftUp = (evt) => {
-      if (evt.code === SHIFT_LEFT || evt.code === SHIFT_RIGHT) {
-        this.handleShift('main');
+      if (evt.code.startsWith(SHIFT)) {
+        this.isShift = false;
+        this.updateKeyboard();
       }
     };
 
-    const keydownHandlers = [
+    const handleOptKeyup = (evt) => {
+      if (evt.code.startsWith(ALT)) {
+        this.isAlt = false;
+      }
+    };
+
+    document.addEventListener('keydown', compose([
       handleHighlightKeydown,
-      handleCapsLockKeydown,
+      handleCapsLockChange,
       handleShiftKeydown,
       handleTabKeydown,
-    ];
-
-    const keyupHandlers = [
+      handleOptKeydown,
+      handleLanguageChange,
+    ]));
+    document.addEventListener('keyup', compose([
       handleHighlightKeyup,
       handleShiftUp,
-    ];
-
-    window.addEventListener('keydown', compose(keydownHandlers));
-    window.addEventListener('keyup', compose(keyupHandlers));
+      handleOptKeyup,
+      handleCapsLockChange,
+    ]));
   }
 
   activateVirtualKeyboardHandlers() {
@@ -99,17 +131,36 @@ class Keyboard {
       this.handleKeyboardHighlight(evt.target.id, 'add');
     };
 
-    const handleShiftMousedown = (evt) => {
+    const handleShiftClick = (evt) => {
       const code = evt.target.id;
 
-      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
-        this.handleShift('shift');
+      if (code.startsWith(SHIFT)) {
+        this.isShift = !this.isShift;
+        this.handleLayoutChange();
+      } else if (!code.startsWith(ALT)) {
+        this.isShift = false;
       }
+
+      this.handleShift(code);
+    };
+
+    const handleOptClick = (evt) => {
+      const code = evt.target.id;
+
+      if (code.startsWith(ALT)) {
+        this.isAlt = !this.isAlt;
+        this.handleLayoutChange();
+      } else {
+        this.isAlt = false;
+      }
+
+      this.handleAlt(code);
     };
 
     const handleCapsLockClick = (evt) => {
       if (evt.target.id === CAPS_LOCK) {
-        this.capsLock = !this.capsLock;
+        this.isCapsLock = !this.isCapsLock;
+
         this.handleCapsLock();
       }
     };
@@ -135,48 +186,62 @@ class Keyboard {
       this.handleKeyboardHighlight(evt.target.id, 'remove');
     };
 
-    const handleShiftMouseup = (evt) => {
-      const code = evt.target.id;
-
-      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
-        this.handleShift('main');
-      }
-    };
-
     this.keyboardContainer.addEventListener('click', compose([
       handleCapsLockClick,
       handleTextPrintClick,
       handleArrowKeysClick,
+      handleShiftClick,
+      handleOptClick,
     ]));
     this.keyboardContainer.addEventListener('mousedown', compose([
       handleHighlightMousedown,
-      handleShiftMousedown,
     ]));
     this.keyboardContainer.addEventListener('mouseup', compose([
       handleHighlightMouseup,
-      handleShiftMouseup,
     ]));
   }
 
   handleCapsLock() {
-    if (this.capsLock) {
+    this.updateKeyboard();
+
+    if (this.isCapsLock) {
       this.keyElements[CAPS_LOCK].classList.add('key--caps-active');
-      this.letterKeys.forEach(({ code, shift }) => {
-        this.keyElements[code].innerHTML = shift[this.lang];
-      });
     } else {
       this.keyElements[CAPS_LOCK].classList.remove('key--caps-active');
-      this.letterKeys.forEach(({ code, main }) => {
-        this.keyElements[code].innerHTML = main[this.lang];
-      });
     }
   }
 
-  handleShift(mode) {
-    this.updateKeySymbols(this.nonLetterKeys, mode);
+  handleShift(code) {
+    this.updateKeyboard();
 
-    if (!this.capsLock) {
-      this.updateKeySymbols(this.letterKeys, mode);
+    if (this.isShift) {
+      this.handleKeyboardHighlight(code, 'add');
+    } else {
+      this.handleKeyboardHighlight('ShiftLeft', 'remove');
+      this.handleKeyboardHighlight('ShiftRight', 'remove');
+    }
+  }
+
+  handleAlt(code) {
+    if (this.isAlt) {
+      this.handleKeyboardHighlight(code, 'add');
+    } else {
+      this.handleKeyboardHighlight('AltLeft', 'remove');
+      this.handleKeyboardHighlight('AltRight', 'remove');
+    }
+  }
+
+  updateKeyboard() {
+    if (this.isShift) {
+      this.updateKeySymbols(this.nonLetterKeys, 'shift');
+    } else {
+      this.updateKeySymbols(this.nonLetterKeys, 'main');
+    }
+
+    if (this.isCapsLock || this.isShift) {
+      this.updateKeySymbols(this.letterKeys, 'shift');
+    } else {
+      this.updateKeySymbols(this.letterKeys, 'main');
     }
   }
 
@@ -184,6 +249,20 @@ class Keyboard {
     arr.forEach((key) => {
       this.keyElements[key.code].innerHTML = key[mode][this.lang];
     });
+  }
+
+  handleLayoutChange() {
+    if (this.isShift && this.isAlt) {
+      this.lang = this.lang === 'en' ? 'ru' : 'en';
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, this.lang);
+
+      this.getKeyboardLayout();
+      this.updateKeyboard();
+      this.isShift = false;
+      this.isAlt = false;
+      this.handleAlt();
+      this.handleShift();
+    }
   }
 
   printText(code, letter) {
@@ -299,6 +378,10 @@ class Keyboard {
     this.textarea.setSelectionRange(cursorStart, cursorStart);
   }
 
+  getMode() {
+    return this.isShift ? 'shift' : 'main';
+  }
+
   getKeyboardElement() {
     const keyboard = createElementFromString('<div class="keyboard"></div>');
     const keyboardContainer = createElementFromString('<div class="keys-container" id="keyboard-container"></div>');
@@ -354,7 +437,7 @@ class Keyboard {
     return createElementFromString(`
       <div class="keyboard-tip">
         <p>Keyboard was made for Mac OS System</p>
-        <p>Input language shorthand: <code>'opt' + 'space'</code> </p>
+        <p>Input language shorthand: <code> &lt;Opt&gt; + &lt;Shift&gt;</code> </p>
       </div>
     `);
   }
@@ -368,4 +451,4 @@ class Keyboard {
   }
 }
 
-new Keyboard(KEYBOARD_ROWS, document.querySelector('#root')).init();
+new Keyboard(document.querySelector('#root')).init();

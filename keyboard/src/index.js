@@ -287,7 +287,7 @@ class Keyboard {
 
       case 'Backspace':
         this.textarea.value = firstPart.slice(0, -1) + secondPart;
-        cursorStart += 1;
+        cursorStart -= 1;
 
         break;
 

@@ -6,6 +6,8 @@ export const CONTROL_KEYS = new Set([
   'AltLeft',
   'OSLeft',
   'OSRight',
+  'MetaLeft',
+  'MetaRight',
   'AltRight',
   'ArrowUp',
   'ArrowDown',

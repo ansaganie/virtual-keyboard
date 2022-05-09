@@ -120,7 +120,7 @@ export default [
       shift: { en: 'Tab', ru: 'Tab' },
       isLetter: false,
       element: null,
-      className: 'two-place',
+      className: 'shift-key',
     },
     {
       code: 'KeyQ',
@@ -225,6 +225,14 @@ export default [
       isLetter: false,
       element: null,
       className: '',
+    },
+    {
+      code: 'Delete',
+      main: { en: 'Del', ru: 'Del' },
+      shift: { en: 'Del', ru: 'Del' },
+      isLetter: false,
+      element: null,
+      className: 'shift-key',
     },
   ],
   [

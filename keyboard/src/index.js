@@ -6,6 +6,7 @@ import compose from './scripts/compose';
 const CAPS_LOCK = 'CapsLock';
 const SHIFT_LEFT = 'ShiftLeft';
 const SHIFT_RIGHT = 'ShiftRight';
+const TAB = 'Tab';
 
 class Keyboard {
   constructor(keyboardRows) {
@@ -16,14 +17,15 @@ class Keyboard {
     this.nonLetterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => !isLetter);
     this.keyElements = {};
     this.lang = localStorage.getItem('keyboard-lang') || 'en';
-    this.textarea = null;
     this.capsLock = false;
+    this.textarea = null;
   }
 
   init() {
     this.renderHeader();
     this.renderMain();
     this.activateKeyboardHandlers();
+    this.textarea = document.querySelector('#text');
   }
 
   renderHeader() {
@@ -41,8 +43,8 @@ class Keyboard {
   renderMain() {
     const main = document.createElement('main');
     const wrapper = createElementFromString('<div class="wrapper"></div>');
-    this.textarea = Keyboard.getTextAreaElement();
-    wrapper.append(this.textarea);
+    this.textarea = Keyboard.getTextAreaElement().querySelector('textarea');
+    wrapper.append(Keyboard.getTextAreaElement());
     wrapper.append(this.getKeyboardElement());
     wrapper.append(Keyboard.getKeyboardTipElement());
     main.append(wrapper);
@@ -72,22 +74,49 @@ class Keyboard {
       keyboardContainer.append(rowElement);
     });
 
+    keyboardContainer.addEventListener('mousedown', (evt) => {
+      const code = evt.target.id;
+
+      this.handleKeyboardHighlight(code, 'add');
+
+      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
+        this.handleShift('shift');
+      }
+    });
+
+    keyboardContainer.addEventListener('click', (evt) => {
+      if (evt.target.id === CAPS_LOCK) {
+        this.capsLock = !this.capsLock;
+        this.handleCapsLock();
+      }
+    });
+
+    keyboardContainer.addEventListener('mouseup', (evt) => {
+      const code = evt.target.id;
+
+      this.handleKeyboardHighlight(code, 'remove');
+
+      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
+        this.handleShift('main');
+      }
+    });
+
     keyboard.append(keyboardContainer);
 
     return keyboard;
   }
 
-  handleKeyboardHighlight(evt, method) {
-    const element = this.keyElements[evt.code];
+  handleKeyboardHighlight(code, method) {
+    const element = this.keyElements[code];
 
-    if (element && evt.code !== CAPS_LOCK) {
+    if (element && code !== CAPS_LOCK) {
       element.classList[method]('key--active');
     }
   }
 
   activateKeyboardHandlers() {
     const handleHighlightKeydown = (evt) => {
-      this.handleKeyboardHighlight(evt, 'add');
+      this.handleKeyboardHighlight(evt.code, 'add');
     };
 
     const handleCapsLockKeydown = (evt) => {
@@ -103,8 +132,18 @@ class Keyboard {
       }
     };
 
+    const handleTabKeydown = (evt) => {
+      if (evt.code === TAB) {
+        evt.preventDefault();
+
+        if (document.activeElement === this.textarea) {
+          this.printText(evt.code, '\t');
+        }
+      }
+    };
+
     const handleHighlightKeyup = (evt) => {
-      this.handleKeyboardHighlight(evt, 'remove');
+      this.handleKeyboardHighlight(evt.code, 'remove');
     };
 
     const handleShiftUp = (evt) => {
@@ -117,6 +156,7 @@ class Keyboard {
       handleHighlightKeydown,
       handleCapsLockKeydown,
       handleShiftKeydown,
+      handleTabKeydown,
     ];
 
     const keyupHandlers = [
@@ -125,7 +165,6 @@ class Keyboard {
     ];
 
     window.addEventListener('keydown', compose(keydownHandlers));
-
     window.addEventListener('keyup', compose(keyupHandlers));
   }
 
@@ -155,6 +194,50 @@ class Keyboard {
     arr.forEach((key) => {
       this.keyElements[key.code].innerHTML = key[mode][this.lang];
     });
+  }
+
+  printText(code, letter) {
+    let cursorStart = this.textarea.selectionStart;
+    const cursorEnd = this.textarea.selectionEnd;
+
+    const firstPart = this.textarea.value.slice(0, cursorStart);
+    const secondPart = this.textarea.value.slice(cursorEnd);
+
+    switch (code) {
+      case 'Tab':
+        this.textarea.value = `${firstPart}\t${secondPart}`;
+        cursorStart += 1;
+
+        break;
+
+      case 'Space':
+        this.textarea.value = `${firstPart} ${secondPart}`;
+        cursorStart += 1;
+
+        break;
+
+      case 'Backspace':
+        this.textarea.value = firstPart.slice(0, -1) + secondPart;
+        cursorStart += 1;
+
+        break;
+
+      case 'Delete':
+        this.textarea.value = firstPart + secondPart.slice(1);
+        break;
+
+      case 'Enter':
+        this.textarea.value = `${firstPart}\n${secondPart}`;
+        cursorStart += 1;
+
+        break;
+      default:
+        this.textarea.value = `${firstPart}${letter}${secondPart}`;
+        cursorStart += 1;
+    }
+
+    this.textarea.focus();
+    this.textarea.setSelectionRange(cursorStart, cursorStart);
   }
 
   static getKeyboardTipElement() {

@@ -1,5 +1,5 @@
 import './styles/index.scss';
-import rows from './scripts/keyboard-rows';
+import { KEYBOARD_ROWS, CONTROL_KEYS } from './scripts/keyboard-rows';
 import createElementFromString from './scripts/create-element-from-string';
 import compose from './scripts/compose';
 
@@ -7,103 +7,29 @@ const CAPS_LOCK = 'CapsLock';
 const SHIFT_LEFT = 'ShiftLeft';
 const SHIFT_RIGHT = 'ShiftRight';
 const TAB = 'Tab';
-
 class Keyboard {
-  constructor(keyboardRows) {
-    this.root = document.querySelector('#root');
+  constructor(keyboardRows, rootElement) {
     this.keyboardRows = keyboardRows;
     this.keyboardRowsFlat = keyboardRows.flat();
     this.letterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => isLetter);
     this.nonLetterKeys = this.keyboardRowsFlat.filter(({ isLetter }) => !isLetter);
-    this.keyElements = {};
+
     this.lang = localStorage.getItem('keyboard-lang') || 'en';
     this.capsLock = false;
+
+    this.root = rootElement;
+    this.keyElements = {};
     this.textarea = null;
+    this.keyboardContainer = null;
   }
 
   init() {
     this.renderHeader();
     this.renderMain();
-    this.activateKeyboardHandlers();
     this.textarea = document.querySelector('#text');
-  }
-
-  renderHeader() {
-    const header = createElementFromString(`
-      <header>
-        <div class="wrapper">
-          <h1 class="site-heading">Rolling scope VIRTUAL KEYBOARD</h1>
-        </div>
-      </header>
-    `);
-
-    this.root.append(header);
-  }
-
-  renderMain() {
-    const main = document.createElement('main');
-    const wrapper = createElementFromString('<div class="wrapper"></div>');
-    this.textarea = Keyboard.getTextAreaElement().querySelector('textarea');
-    wrapper.append(Keyboard.getTextAreaElement());
-    wrapper.append(this.getKeyboardElement());
-    wrapper.append(Keyboard.getKeyboardTipElement());
-    main.append(wrapper);
-
-    this.root.append(main);
-  }
-
-  getKeyboardElement() {
-    const keyboard = createElementFromString('<div class="keyboard"></div>');
-    const keyboardContainer = createElementFromString('<div class="keys-container"></div>');
-
-    this.keyboardRows.forEach((row) => {
-      const rowElement = createElementFromString('<div class="row"></div>');
-      Object.values(row).forEach((key) => {
-        const keyElement = createElementFromString(`
-          <button class="key" tabindex="-1" id=${key.code}></button>
-        `);
-        keyElement.innerHTML = key.main[this.lang];
-
-        if (key.className) {
-          keyElement.classList.add(key.className);
-        }
-
-        this.keyElements[key.code] = keyElement;
-        rowElement.append(keyElement);
-      });
-      keyboardContainer.append(rowElement);
-    });
-
-    keyboardContainer.addEventListener('mousedown', (evt) => {
-      const code = evt.target.id;
-
-      this.handleKeyboardHighlight(code, 'add');
-
-      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
-        this.handleShift('shift');
-      }
-    });
-
-    keyboardContainer.addEventListener('click', (evt) => {
-      if (evt.target.id === CAPS_LOCK) {
-        this.capsLock = !this.capsLock;
-        this.handleCapsLock();
-      }
-    });
-
-    keyboardContainer.addEventListener('mouseup', (evt) => {
-      const code = evt.target.id;
-
-      this.handleKeyboardHighlight(code, 'remove');
-
-      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
-        this.handleShift('main');
-      }
-    });
-
-    keyboard.append(keyboardContainer);
-
-    return keyboard;
+    this.keyboardContainer = document.querySelector('#keyboard-container');
+    this.activatePhysicalKeyboardHandlers();
+    this.activateVirtualKeyboardHandlers();
   }
 
   handleKeyboardHighlight(code, method) {
@@ -114,7 +40,7 @@ class Keyboard {
     }
   }
 
-  activateKeyboardHandlers() {
+  activatePhysicalKeyboardHandlers() {
     const handleHighlightKeydown = (evt) => {
       this.handleKeyboardHighlight(evt.code, 'add');
     };
@@ -166,6 +92,43 @@ class Keyboard {
 
     window.addEventListener('keydown', compose(keydownHandlers));
     window.addEventListener('keyup', compose(keyupHandlers));
+  }
+
+  activateVirtualKeyboardHandlers() {
+    this.keyboardContainer.addEventListener('mousedown', (evt) => {
+      const code = evt.target.id;
+
+      this.handleKeyboardHighlight(code, 'add');
+
+      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
+        this.handleShift('shift');
+      }
+    });
+
+    this.keyboardContainer.addEventListener('click', (evt) => {
+      const code = evt.target.id;
+
+      if (evt.target.id === CAPS_LOCK) {
+        this.capsLock = !this.capsLock;
+        this.handleCapsLock();
+      }
+
+      const canPrintText = code && code !== 'keyboard-container' && !CONTROL_KEYS.has(code);
+
+      if (canPrintText) {
+        this.printText(code, evt.target.textContent);
+      }
+    });
+
+    this.keyboardContainer.addEventListener('mouseup', (evt) => {
+      const code = evt.target.id;
+
+      this.handleKeyboardHighlight(code, 'remove');
+
+      if (code === SHIFT_LEFT || code === SHIFT_RIGHT) {
+        this.handleShift('main');
+      }
+    });
   }
 
   handleCapsLock() {
@@ -236,8 +199,61 @@ class Keyboard {
         cursorStart += 1;
     }
 
-    this.textarea.focus();
+    if (document.activeElement !== this.textarea) {
+      this.textarea.focus();
+    }
     this.textarea.setSelectionRange(cursorStart, cursorStart);
+  }
+
+  getKeyboardElement() {
+    const keyboard = createElementFromString('<div class="keyboard"></div>');
+    const keyboardContainer = createElementFromString('<div class="keys-container" id="keyboard-container"></div>');
+
+    this.keyboardRows.forEach((row) => {
+      const rowElement = createElementFromString('<div class="row"></div>');
+      Object.values(row).forEach((key) => {
+        const keyElement = createElementFromString(`
+          <button class="key" tabindex="-1" id=${key.code}></button>
+        `);
+        keyElement.innerHTML = key.main[this.lang];
+
+        if (key.className) {
+          keyElement.classList.add(key.className);
+        }
+
+        this.keyElements[key.code] = keyElement;
+        rowElement.append(keyElement);
+      });
+      keyboardContainer.append(rowElement);
+    });
+
+    keyboard.append(keyboardContainer);
+
+    return keyboard;
+  }
+
+  renderHeader() {
+    const header = createElementFromString(`
+      <header>
+        <div class="wrapper">
+          <h1 class="site-heading">Rolling scope VIRTUAL KEYBOARD</h1>
+        </div>
+      </header>
+    `);
+
+    this.root.append(header);
+  }
+
+  renderMain() {
+    const main = document.createElement('main');
+    const wrapper = createElementFromString('<div class="wrapper"></div>');
+    this.textarea = Keyboard.getTextAreaElement().querySelector('textarea');
+    wrapper.append(Keyboard.getTextAreaElement());
+    wrapper.append(this.getKeyboardElement());
+    wrapper.append(Keyboard.getKeyboardTipElement());
+    main.append(wrapper);
+
+    this.root.append(main);
   }
 
   static getKeyboardTipElement() {
@@ -258,4 +274,4 @@ class Keyboard {
   }
 }
 
-new Keyboard(rows).init();
+new Keyboard(KEYBOARD_ROWS, document.querySelector('#root')).init();

@@ -1,4 +1,19 @@
-export default [
+export const CONTROL_KEYS = new Set([
+  'CapsLock',
+  'ShiftLeft',
+  'ShiftRight',
+  'ControlLeft',
+  'AltLeft',
+  'OSLeft',
+  'OSRight',
+  'AltRight',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+]);
+
+export const KEYBOARD_ROWS = [
   [
     {
       code: 'IntlBackslash',

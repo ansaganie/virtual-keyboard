@@ -1,0 +1,78 @@
+@use '../../common/_variables.scss' as vars;
+
+.about {
+  &__wrapper {
+    padding: 94px 40px 100px 40px;
+    display: grid;
+    grid-template-columns: minmax(430px, 1fr) minmax(430px, 1fr);
+  }
+
+  &__picture {
+    place-self: center;
+  }
+}
+
+.cozy {
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+
+  &__heading {
+    text-align: left;
+  }
+
+  &__text {
+    padding: 0;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 160%;
+    color: vars.$color-dark-xl;
+  }
+}
+
+@media screen and (max-width:1279px) and (min-width:768px) {
+  .about {
+    &__wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 80px 30px 100px 30px;
+
+    }
+  
+    &__picture {
+      margin-top: 80px;
+      place-self: center;
+    }
+  }
+
+  .cozy {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .about {
+    &__wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 40px 25px 40px 25px;
+
+    }
+  
+    &__picture {
+      margin-top: 40px;
+      place-self: center;
+    }
+  }
+
+  .cozy {
+    align-items: center;
+    &__heading {
+      text-align: center;
+    }
+  }
+}

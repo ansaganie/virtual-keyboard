@@ -1,0 +1,60 @@
+@use '../_variables.scss' as vars;
+
+.card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  background-color: vars.$color-light-s;
+  border-radius: 9px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  &__image {
+    width: fit-content;
+    height: 270px;
+  }
+
+  &__name {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__button {
+    padding: 15px 45px;
+
+    background-color: vars.$color-light-s;
+    border: 2px solid vars.$color-primary;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    color: vars.$color-dark-3xl;
+
+    cursor: pointer;
+  }
+
+  &:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background-color: vars.$color-light-xl;
+  }
+
+  &:hover > &__button {
+    background-color: vars.$color-primary-light;
+    border-color: vars.$color-primary-light;
+  }
+}

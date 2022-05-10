@@ -1,0 +1,36 @@
+@use './_fonts.scss';
+@use './_normalize.scss';
+@use './blocks/components';
+@use './blocks/header.scss';
+@use './blocks/footer.scss';
+@use './blocks/card.scss';
+@use './blocks/popup.scss';
+@use './_variables.scss' as vars;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 16.5px;
+  color: vars.$color-dark-l;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
